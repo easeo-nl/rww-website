@@ -1,0 +1,84 @@
+{
+    "forms": [
+        {
+            "id": "contact",
+            "naam": "Contactformulier",
+            "velden": [
+                {
+                    "naam": "naam",
+                    "type": "text",
+                    "label": "Naam",
+                    "verplicht": true
+                },
+                {
+                    "naam": "telefoon",
+                    "type": "tel",
+                    "label": "Telefoon",
+                    "verplicht": true
+                },
+                {
+                    "naam": "email",
+                    "type": "email",
+                    "label": "E-mail",
+                    "verplicht": true
+                },
+                {
+                    "naam": "type_project",
+                    "type": "select",
+                    "label": "Type project",
+                    "verplicht": false,
+                    "opties": ["Badkamer", "Keuken", "Complete renovatie", "Stucwerk", "Vloeren", "Interieurontwerp", "Anders"]
+                },
+                {
+                    "naam": "bericht",
+                    "type": "textarea",
+                    "label": "Bericht",
+                    "verplicht": false
+                }
+            ],
+            "email_naar": "info@rwwbouw.nl",
+            "bevestiging": "Bedankt voor uw bericht. We nemen zo snel mogelijk contact met u op.",
+            "knop_tekst": "Vraag een vrijblijvende offerte aan"
+        },
+        {
+            "id": "contact-pl",
+            "naam": "Formularz kontaktowy",
+            "velden": [
+                {
+                    "naam": "imie",
+                    "type": "text",
+                    "label": "Imi\u0119",
+                    "verplicht": true
+                },
+                {
+                    "naam": "telefon",
+                    "type": "tel",
+                    "label": "Telefon",
+                    "verplicht": true
+                },
+                {
+                    "naam": "email",
+                    "type": "email",
+                    "label": "E-mail",
+                    "verplicht": false
+                },
+                {
+                    "naam": "rodzaj_projektu",
+                    "type": "select",
+                    "label": "Rodzaj projektu",
+                    "verplicht": false,
+                    "opties": ["\u0141azienka", "Kuchnia", "Remont ca\u0142ego mieszkania", "Tynkowanie", "Pod\u0142ogi i glazura", "Projekt wn\u0119trz", "Inne"]
+                },
+                {
+                    "naam": "wiadomosc",
+                    "type": "textarea",
+                    "label": "Wiadomo\u015b\u0107",
+                    "verplicht": false
+                }
+            ],
+            "email_naar": "info@rwwbouw.nl",
+            "bevestiging": "Dzi\u0119kujemy za wiadomo\u015b\u0107. Odpowiemy w ci\u0105gu 24 godzin.",
+            "knop_tekst": "Wy\u015blij zapytanie"
+        }
+    ]
+}

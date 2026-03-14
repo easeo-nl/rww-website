@@ -1,0 +1,17 @@
+{
+    "main": [
+        {"url": "/", "label": "Home"},
+        {"url": "/#werkwijze", "label": "Werkwijze"},
+        {"url": "/#diensten", "label": "Diensten"},
+        {"url": "/#projecten", "label": "Projecten"},
+        {"url": "/#reviews", "label": "Reviews"},
+        {"url": "/#over-ons", "label": "Over ons"},
+        {"url": "/#contact", "label": "Contact"},
+        {"url": "/polski.php", "label": "PL"}
+    ],
+    "footer": [
+        {"url": "/privacyverklaring", "label": "Privacyverklaring"},
+        {"url": "/voorwaarden", "label": "Voorwaarden"},
+        {"url": "/cookiebeleid", "label": "Cookiebeleid"}
+    ]
+}

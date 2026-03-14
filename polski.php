@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/header.php';
   <!-- SECTION: hero -->
   <section id="hero" class="relative min-h-screen flex items-center">
     <div class="absolute inset-0">
-      <img src="<?= e(page_content('polski', 'hero_image', 'Fotos/20230329_151355.jpg')) ?>" alt="Remont łazienki przez RWW Bouw" class="w-full h-full object-cover">
+      <img src="<?= e(page_content('polski', 'hero_image', '/images/uploads/20230329_151355.jpg')) ?>" alt="Remont łazienki przez RWW Bouw" class="w-full h-full object-cover">
       <div class="hero-overlay absolute inset-0"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -51,6 +51,17 @@ require_once __DIR__ . '/includes/header.php';
           <?= e(page_content('polski', 'dlaczego_titel', 'Polski wykonawca, holenderska jakość')) ?>
         </h2>
         <p class="text-rww-muted text-lg leading-relaxed"><?= e(page_content('polski', 'dlaczego_tekst', '')) ?></p>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-16 fade-in">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-rww-red/20">
+          <img src="/images/AgnieszkaSejfrydArchitect.png" alt="Agnieszka Sejfryd — Architektka wnętrz" class="w-full h-full object-cover">
+        </div>
+        <div class="text-center md:text-left">
+          <h3 class="font-display text-xl text-rww-dark font-semibold mb-2">Agnieszka Sejfryd</h3>
+          <p class="text-rww-red text-sm font-medium mb-2">Architektka wnętrz i projektantka</p>
+          <p class="text-rww-muted text-sm leading-relaxed max-w-lg">Agnieszka przygotowuje profesjonalne rysunki budowlane i wizualizacje 3D zanim ruszamy z remontem. Wiesz dokładnie, co dostajesz. Koszt projektu jest odliczany od zlecenia.</p>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
@@ -93,12 +104,12 @@ require_once __DIR__ . '/includes/header.php';
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
         <?php
         $uslugi = [
-          ['titel' => 'Łazienki na wymiar', 'tekst' => 'Kompleksowy remont łazienki: glazura, armatura, meble na wymiar z betonu ciré.', 'img' => 'Fotos/20230329_151357.jpg'],
-          ['titel' => 'Kuchnie na wymiar', 'tekst' => 'Od projektu do montażu. Agnieszka projektuje, Raphaël buduje. Włącznie z instalacją i wykończeniem.', 'img' => 'Fotos/20230329_151320.jpg'],
-          ['titel' => 'Kompleksowe remonty mieszkań', 'tekst' => 'Łazienka, kuchnia, podłogi, poddasze, malowanie — wszystko naraz, jeden zespół.', 'img' => 'Fotos/IMG-20230330-WA0000 (1).jpeg'],
-          ['titel' => 'Tynkowanie i wykończenia', 'tekst' => 'Gładkie ściany i sufity. Beton ciré, mikrobeton i tradycyjne tynki. Perfekcyjnie gładkie wykończenie.', 'img' => 'Fotos/IMG-20230330-WA0002.jpg'],
-          ['titel' => 'Podłogi i glazura', 'tekst' => 'Ogrzewanie podłogowe, wylewki, wyrównanie i glazura. Profesjonalna robota do ostatniego detalu.', 'img' => 'Fotos/20180410_104638.jpg'],
-          ['titel' => 'Projekt wnętrz i wizualizacja', 'tekst' => 'Agnieszka zaprojektuje Twoje wnętrze i przygotuje wizualizacje 3D. Zobaczysz efekt zanim zaczniemy.', 'img' => 'Fotos/20230329_151317.jpg'],
+          ['titel' => 'Łazienki na wymiar', 'tekst' => 'Kompleksowy remont łazienki: glazura, armatura, meble na wymiar z betonu ciré.', 'img' => '/images/uploads/20230329_151357.jpg'],
+          ['titel' => 'Kuchnie na wymiar', 'tekst' => 'Od projektu do montażu. Agnieszka projektuje, Raphaël buduje. Włącznie z instalacją i wykończeniem.', 'img' => '/images/uploads/20230329_151320.jpg'],
+          ['titel' => 'Kompleksowe remonty mieszkań', 'tekst' => 'Łazienka, kuchnia, podłogi, poddasze, malowanie — wszystko naraz, jeden zespół.', 'img' => '/images/uploads/IMG-20230330-WA0000 (1).jpeg'],
+          ['titel' => 'Tynkowanie i wykończenia', 'tekst' => 'Gładkie ściany i sufity. Beton ciré, mikrobeton i tradycyjne tynki. Perfekcyjnie gładkie wykończenie.', 'img' => '/images/uploads/IMG-20230330-WA0002.jpg'],
+          ['titel' => 'Podłogi i glazura', 'tekst' => 'Ogrzewanie podłogowe, wylewki, wyrównanie i glazura. Profesjonalna robota do ostatniego detalu.', 'img' => '/images/uploads/20180410_104638.jpg'],
+          ['titel' => 'Projekt wnętrz i wizualizacja', 'tekst' => 'Agnieszka zaprojektuje Twoje wnętrze i przygotuje wizualizacje 3D. Zobaczysz efekt zanim zaczniemy.', 'img' => '/images/uploads/20230329_151317.jpg'],
         ];
         foreach ($uslugi as $u): ?>
         <div class="project-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
@@ -185,7 +196,7 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         </div>
         <div class="relative">
-          <img src="Fotos/20230329_151355.jpg" alt="Prace RWW Bouw" class="rounded-lg shadow-xl w-full" loading="lazy">
+          <img src="/images/uploads/20230329_151355.jpg" alt="Prace RWW Bouw" class="rounded-lg shadow-xl w-full" loading="lazy">
           <div class="absolute -bottom-6 -left-6 bg-rww-dark text-white p-6 rounded-lg shadow-lg hidden lg:block">
             <p class="font-display text-lg font-semibold">&ldquo;Najpierw projekt,<br>potem budowa.&rdquo;</p>
           </div>

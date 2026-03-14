@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/header.php';
   <!-- SECTION: hero -->
   <section id="hero" class="relative min-h-screen flex items-center">
     <div class="absolute inset-0">
-      <img src="<?= e(page_content('home', 'hero_image', 'Fotos/20230329_151355.jpg')) ?>" alt="Badkamerrenovatie door RWW Bouw" class="w-full h-full object-cover">
+      <img src="<?= e(page_content('home', 'hero_image', '/images/uploads/20230329_151355.jpg')) ?>" alt="Badkamerrenovatie door RWW Bouw" class="w-full h-full object-cover">
       <div class="hero-overlay absolute inset-0"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -55,6 +55,17 @@ require_once __DIR__ . '/includes/header.php';
         <p data-field="werkwijze_tekst" class="text-rww-muted text-lg leading-relaxed">
           <?= e(page_content('home', 'werkwijze_tekst', '')) ?>
         </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-16 fade-in">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-rww-red/20">
+          <img src="/images/AgnieszkaSejfrydArchitect.png" alt="Agnieszka Sejfryd — Interieurarchitect" class="w-full h-full object-cover">
+        </div>
+        <div class="text-center md:text-left">
+          <h3 class="font-display text-xl text-rww-dark font-semibold mb-2">Agnieszka Sejfryd</h3>
+          <p class="text-rww-red text-sm font-medium mb-2">Interieurarchitect & designer</p>
+          <p class="text-rww-muted text-sm leading-relaxed max-w-lg">Agnieszka maakt professionele bouwtekeningen en 3D-visualisaties voordat er een hamer wordt opgepakt. U ziet exact wat u krijgt. De kosten voor de tekening worden verrekend met de vervolgopdracht.</p>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
@@ -98,12 +109,12 @@ require_once __DIR__ . '/includes/header.php';
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
         <?php
         $diensten = [
-          ['titel' => 'Badkamers op maat', 'tekst' => 'Complete badkamerrenovatie inclusief tegelwerk, sanitair en op maat gemaakte meubels van beton ciré.', 'img' => 'Fotos/20230329_151357.jpg', 'alt' => 'Badkamerrenovatie'],
-          ['titel' => 'Keukens op maat', 'tekst' => 'Van ontwerp tot plaatsing. Agnieszka ontwerpt, Raphaël bouwt. Inclusief leidingwerk en afwerking.', 'img' => 'Fotos/20230329_151320.jpg', 'alt' => 'Keukenrenovatie'],
-          ['titel' => 'Complete woningrenovatie', 'tekst' => 'Badkamer, keuken, vloer, zolder, schilderwerk — alles in één keer, door één team.', 'img' => 'Fotos/IMG-20230330-WA0000 (1).jpeg', 'alt' => 'Complete woningrenovatie'],
-          ['titel' => 'Stucwerk & afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => 'Fotos/IMG-20230330-WA0002.jpg', 'alt' => 'Stucwerk'],
-          ['titel' => 'Vloeren & tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => 'Fotos/20180410_104638.jpg', 'alt' => 'Vloerverwarming'],
-          ['titel' => 'Interieurontwerp & visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => 'Fotos/20230329_151317.jpg', 'alt' => 'Interieurontwerp'],
+          ['titel' => 'Badkamers op maat', 'tekst' => 'Complete badkamerrenovatie inclusief tegelwerk, sanitair en op maat gemaakte meubels van beton ciré.', 'img' => '/images/uploads/20230329_151357.jpg', 'alt' => 'Badkamerrenovatie'],
+          ['titel' => 'Keukens op maat', 'tekst' => 'Van ontwerp tot plaatsing. Agnieszka ontwerpt, Raphaël bouwt. Inclusief leidingwerk en afwerking.', 'img' => '/images/uploads/20230329_151320.jpg', 'alt' => 'Keukenrenovatie'],
+          ['titel' => 'Complete woningrenovatie', 'tekst' => 'Badkamer, keuken, vloer, zolder, schilderwerk — alles in één keer, door één team.', 'img' => '/images/uploads/IMG-20230330-WA0000 (1).jpeg', 'alt' => 'Complete woningrenovatie'],
+          ['titel' => 'Stucwerk & afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => '/images/uploads/IMG-20230330-WA0002.jpg', 'alt' => 'Stucwerk'],
+          ['titel' => 'Vloeren & tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => '/images/uploads/20180410_104638.jpg', 'alt' => 'Vloerverwarming'],
+          ['titel' => 'Interieurontwerp & visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => '/images/uploads/20230329_151317.jpg', 'alt' => 'Interieurontwerp'],
         ];
         foreach ($diensten as $d): ?>
         <div class="project-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
@@ -191,7 +202,7 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         </div>
         <div class="relative">
-          <img src="Fotos/20230329_151355.jpg" alt="Vakwerk door RWW Bouw" class="rounded-lg shadow-xl w-full" loading="lazy">
+          <img src="/images/uploads/20230329_151355.jpg" alt="Vakwerk door RWW Bouw" class="rounded-lg shadow-xl w-full" loading="lazy">
           <div class="absolute -bottom-6 -left-6 bg-rww-dark text-white p-6 rounded-lg shadow-lg hidden lg:block">
             <p class="font-display text-lg font-semibold">&ldquo;Eerst tekenen,<br>dan bouwen.&rdquo;</p>
           </div>

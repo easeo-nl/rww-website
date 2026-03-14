@@ -1,20 +1,18 @@
-# EASEO CMS — Git ignore
+# EASEO CMS — Git ignore (aangepast voor klantsite)
 
-# Data files (contain site-specific content)
-data/*.json
+# Runtime data (niet in git)
 data/audit.log
 data/audit.log.old
 data/submissions/
+data/login_attempts.json
+data/rate_limits/
+
+# Keep data dir structure
 !data/.htaccess
 !data/.gitkeep
 
-# Login attempts
-data/login_attempts.json
-
-# Uploaded media
-images/uploads/*
+# Generated thumbnails
 images/thumbs/*
-!images/uploads/.gitkeep
 !images/thumbs/.gitkeep
 
 # OS files

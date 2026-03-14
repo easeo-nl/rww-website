@@ -1,0 +1,51 @@
+{
+    "company": {
+        "name": "RWW Bouw",
+        "tagline": "Renovatie & Verbouwing",
+        "email": "info@rwwbouw.nl",
+        "phone": "0616035754",
+        "address": "",
+        "postcode": "",
+        "city": "Bunschoten-Spakenburg",
+        "kvk": "",
+        "btw": "",
+        "iban": "",
+        "copyright_year": "2025"
+    },
+    "social": {
+        "linkedin": "",
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "youtube": ""
+    },
+    "brand": {
+        "logo": "/rwwbouw-logo.png",
+        "favicon": "",
+        "color_primary": "#991B1B",
+        "color_secondary": "#B91C1C",
+        "color_dark": "#1C1917",
+        "color_darker": "#0C0A09",
+        "color_surface": "#292524",
+        "color_success": "#10B981",
+        "color_text": "#44403C",
+        "color_muted": "#78716C",
+        "font_display": "Playfair Display",
+        "font_body": "Inter",
+        "font_display_weights": "400;600;700",
+        "font_body_weights": "400;500;600;700",
+        "dark_mode": false
+    },
+    "tracking": {
+        "gtm_id": "",
+        "google_analytics_id": "",
+        "google_search_console": "",
+        "google_ads_conversion_id": "",
+        "google_ads_conversion_label": "",
+        "facebook_pixel_id": "",
+        "custom_head_code": "",
+        "custom_body_code": ""
+    },
+    "setup_complete": true,
+    "show_welcome": true
+}

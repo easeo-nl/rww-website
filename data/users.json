@@ -1,0 +1,11 @@
+{
+    "users": [
+        {
+            "email": "info@rwwbouw.nl",
+            "naam": "Admin",
+            "rol": "admin",
+            "wachtwoord": "$2y$10$VmwBQ/LdOXzmN7NKBmPacOu/Xp6wVGETa6af1XQPCYiEPXxmb.giu",
+            "aangemaakt": "2026-03-14 12:00:00"
+        }
+    ]
+}
