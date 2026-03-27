@@ -1,0 +1,204 @@
+<?php
+require_once __DIR__ . '/includes/content.php';
+require_once __DIR__ . '/includes/form-engine.php';
+
+$pageTitle = page_content('keuken', 'seo_title', 'Keukenrenovatie in Amersfoort | RWW Bouw');
+$metaDescription = page_content('keuken', 'seo_description', 'Complete keukenrenovatie door RWW Bouw. Van opmeting tot oplevering. Bel voor een gratis adviesgesprek.');
+$htmlLang = 'nl';
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+
+  <!-- SECTION: hero -->
+  <section id="hero" class="relative min-h-screen flex items-center">
+    <div class="absolute inset-0">
+      <img src="<?= e(page_content('keuken', 'hero_image', '/images/uploads/20230329_151355.jpg')) ?>" alt="Keukenrenovatie door RWW Bouw" class="w-full h-full object-cover">
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div class="max-w-2xl">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Keukenrenovatie</span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mt-4 mb-6">
+          <?= page_content('keuken', 'hero_titel', 'Nieuwe keuken laten plaatsen?') ?>
+        </h1>
+        <p class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
+          <?= e(page_content('keuken', 'hero_subtitel', 'Agnieszka tekent uw keuken op maat. Raphaël en zijn team plaatsen hem precies zoals gepland. Maatwerk kasten, tegelwerk, elektra en loodgieterwerk — alles door één team.')) ?>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors text-center">
+            Offerte aanvragen
+          </a>
+          <a href="tel:<?= e(site('company.phone')) ?>" class="border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded text-lg font-medium transition-colors text-center">
+            <svg class="w-5 h-5 inline mr-2 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Bel direct: 06 160 357 54
+          </a>
+        </div>
+        <div class="mt-8 flex items-center gap-3">
+          <div class="stars text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="text-stone-400 text-sm">5.0 op Google &middot; Aanbevolen op Werkspot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: hero -->
+
+
+  <!-- SECTION: werkwijze -->
+  <section id="werkwijze" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Onze werkwijze</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
+          Eerst tekenen, dan bouwen
+        </h2>
+        <p class="text-rww-muted text-lg leading-relaxed">
+          U ziet uw nieuwe keuken op papier voordat er ook maar één kast wordt geplaatst. Geen verrassingen, wel een helder plan.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-16 fade-in">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-rww-red/20">
+          <img src="/images/AgnieszkaSejfrydArchitect.png" alt="Agnieszka Sejfryd — Interieurarchitect" class="w-full h-full object-cover">
+        </div>
+        <div class="text-center md:text-left">
+          <h3 class="font-display text-xl text-rww-dark font-semibold mb-2">Agnieszka Sejfryd</h3>
+          <p class="text-rww-red text-sm font-medium mb-2">Interieurarchitect & designer</p>
+          <p class="text-rww-muted text-sm leading-relaxed max-w-lg">Agnieszka maakt professionele bouwtekeningen en 3D-visualisaties van uw keuken voordat er een kast wordt geplaatst. U ziet exact wat u krijgt. De kosten voor de tekening worden verrekend met de vervolgopdracht.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+        <?php
+        $stappen = [
+          ['nr' => '1', 'titel' => 'Contact opnemen', 'tekst' => 'Bel of mail ons voor een vrijblijvend gesprek. We bespreken uw wensen en plannen een afspraak in.'],
+          ['nr' => '2', 'titel' => 'Keuken opmeten', 'tekst' => 'We komen bij u langs en meten de ruimte nauwkeurig op. Agnieszka maakt een professionele tekening op maat.'],
+          ['nr' => '3', 'titel' => 'Ontwerp & offerte', 'tekst' => 'U ziet uw nieuwe keuken in 3D. Op basis van de tekening ontvangt u een heldere offerte met vaste prijs — geen verborgen meerwerk.'],
+          ['nr' => '4', 'titel' => 'Oplevering', 'tekst' => 'Raphaël en zijn team plaatsen de keuken precies zoals getekend. Alles netjes achtergelaten, tot in de puntjes afgewerkt.'],
+        ];
+        foreach ($stappen as $stap): ?>
+        <div class="process-step relative text-center p-6">
+          <div class="w-16 h-16 bg-rww-red/10 rounded-full flex items-center justify-center mx-auto mb-5">
+            <span class="text-rww-red font-display text-2xl font-bold"><?= $stap['nr'] ?></span>
+          </div>
+          <h3 class="font-display text-xl text-rww-dark font-semibold mb-3"><?= e($stap['titel']) ?></h3>
+          <p class="text-rww-muted text-sm leading-relaxed"><?= e($stap['tekst']) ?></p>
+        </div>
+        <?php endforeach; ?>
+      </div>
+
+      <div class="mt-12 text-center fade-in">
+        <p class="text-rww-muted text-sm italic">De kosten voor de tekening worden verrekend met de vervolgopdracht. U betaalt dus alleen als u doorgaat.</p>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: werkwijze -->
+
+
+  <!-- SECTION: diensten -->
+  <section id="diensten" class="py-20 md:py-28 bg-rww-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Wat wij doen</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
+          Complete keukenrenovatie
+        </h2>
+        <p class="text-rww-muted text-lg">Eén team voor het hele traject — van maatwerk kasten en werkblad tot elektra en loodgieterwerk.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        <?php
+        $diensten = [
+          [
+            'titel' => 'Keukenplaatsing',
+            'tekst' => 'Complete keuken monteren en installeren. Van maatwerk kastjes en werkblad tot inbouwapparatuur — strak en op maat.',
+            'img'   => '/images/uploads/20230329_151357.jpg',
+            'alt'   => 'Keukenplaatsing door RWW Bouw',
+          ],
+          [
+            'titel' => 'Elektra & loodgieterwerk',
+            'tekst' => 'Alle aansluitingen voor apparatuur, water en afvoer. Geen losse onderaannemers — één team regelt alles van A tot Z.',
+            'img'   => '/images/uploads/20230329_151355.jpg',
+            'alt'   => 'Elektra en loodgieterwerk keuken',
+          ],
+          [
+            'titel' => 'Maatwerk kasten',
+            'tekst' => 'Op maat gemaakte keukenkastjes en werkblad die precies passen in uw ruimte. Agnieszka adviseert over indeling, materiaal en kleur.',
+            'img'   => '/images/uploads/IMG-20230330-WA0002.jpg',
+            'alt'   => 'Maatwerk keukenkastjes',
+          ],
+        ];
+        foreach ($diensten as $d): ?>
+        <div class="project-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="<?= e($d['img']) ?>" alt="<?= e($d['alt']) ?>" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-xl text-rww-dark font-semibold mb-2"><?= e($d['titel']) ?></h3>
+            <p class="text-rww-muted text-sm leading-relaxed"><?= e($d['tekst']) ?></p>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: diensten -->
+
+
+  <!-- SECTION: reviews -->
+  <section id="reviews" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Klanten aan het woord</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">5.0 op Google</h2>
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <div class="stars text-2xl">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+        <p class="text-rww-muted text-lg">Dit zijn de woorden van onze klanten.</p>
+      </div>
+
+      <?php $reviews_lang = 'nl'; include __DIR__ . '/includes/reviews.php'; ?>
+    </div>
+  </section>
+  <!-- /SECTION: reviews -->
+
+
+  <!-- SECTION: contact -->
+  <section id="contact" class="py-20 md:py-28 bg-rww-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div class="fade-in">
+          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Contact</span>
+          <h2 class="font-display text-3xl sm:text-4xl text-white mt-4 mb-6 font-bold">
+            Plan een inmeting voor uw keuken
+          </h2>
+          <p class="text-stone-400 text-lg leading-relaxed mb-8">Vertel ons over uw keuken. We nemen snel contact met u op voor een vrijblijvende inmeting en offerte.</p>
+
+          <div class="space-y-6">
+            <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+              <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div><p class="font-semibold text-lg">Bel Raphaël</p><p class="text-stone-400">06 160 357 54</p></div>
+            </a>
+            <a href="mailto:<?= e(site('company.email')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+              <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div><p class="font-semibold text-lg">E-mail</p><p class="text-stone-400"><?= e(site('company.email')) ?></p></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <div class="bg-stone-900 rounded-lg p-6 sm:p-8">
+            <?= render_form('contact') ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: contact -->
+
+
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

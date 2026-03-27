@@ -35,8 +35,8 @@ $is_polski = ($htmlLang ?? 'nl') === 'pl';
             <li><a href="#uslugi" class="hover:text-stone-300 transition-colors">Tynkowanie i wykończenia</a></li>
             <li><a href="#uslugi" class="hover:text-stone-300 transition-colors">Podłogi i glazura</a></li>
             <?php else: ?>
-            <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Badkamers op maat</a></li>
-            <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Keukens op maat</a></li>
+            <li><a href="/badkamer.php" class="hover:text-stone-300 transition-colors">Badkamers op maat</a></li>
+            <li><a href="/keuken.php" class="hover:text-stone-300 transition-colors">Keukens op maat</a></li>
             <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Complete woningrenovatie</a></li>
             <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Stucwerk &amp; afwerking</a></li>
             <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Vloeren &amp; tegelwerk</a></li>
