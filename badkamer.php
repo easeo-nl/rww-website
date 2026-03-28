@@ -43,59 +43,7 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <!-- /SECTION: hero -->
 
-
-  <!-- SECTION: werkwijze -->
-  <section id="werkwijze" class="py-20 md:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Onze werkwijze</span>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
-          Eerst tekenen, dan bouwen
-        </h2>
-        <p class="text-rww-muted text-lg leading-relaxed">
-          U ziet uw nieuwe badkamer op papier voordat er één tegel wordt gelegd. Geen verrassingen, wel een helder plan.
-        </p>
-      </div>
-
-      <div class="flex flex-col md:flex-row items-center gap-8 mb-16 fade-in">
-        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-rww-red/20">
-          <img src="/images/AgnieszkaSejfrydArchitect.png" alt="Agnieszka Sejfryd — Interieurarchitect" class="w-full h-full object-cover">
-        </div>
-        <div class="text-center md:text-left">
-          <h3 class="font-display text-xl text-rww-dark font-semibold mb-2">Agnieszka Sejfryd</h3>
-          <p class="text-rww-red text-sm font-medium mb-2">Interieurarchitect & designer</p>
-          <p class="text-rww-muted text-sm leading-relaxed max-w-lg">Agnieszka maakt professionele bouwtekeningen en 3D-visualisaties van uw badkamer voordat er een hamer wordt opgepakt. U ziet exact wat u krijgt. De kosten voor de tekening worden verrekend met de vervolgopdracht.</p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
-        <?php
-        $stappen = [
-          ['nr' => '1', 'titel' => 'Inmeting & ontwerp', 'tekst' => 'Agnieszka komt bij u langs, meet de badkamer op en maakt een professionele bouwtekening op maat.'],
-          ['nr' => '2', 'titel' => '3D-visualisatie', 'tekst' => 'U ziet exact hoe uw nieuwe badkamer eruitziet. Kies tegels, sanitair en afwerking op basis van een realistisch beeld.'],
-          ['nr' => '3', 'titel' => 'Heldere offerte', 'tekst' => 'Op basis van de tekening ontvangt u een duidelijke offerte. U weet precies wat het kost, zonder verborgen meerwerk.'],
-          ['nr' => '4', 'titel' => 'Vakkundige uitvoering', 'tekst' => 'Raphaël en zijn team bouwen precies wat getekend is. Van sloopwerk tot laatste voeg — tot in de puntjes afgewerkt.'],
-        ];
-        foreach ($stappen as $stap): ?>
-        <div class="process-step relative text-center p-6">
-          <div class="w-16 h-16 bg-rww-red/10 rounded-full flex items-center justify-center mx-auto mb-5">
-            <span class="text-rww-red font-display text-2xl font-bold"><?= $stap['nr'] ?></span>
-          </div>
-          <h3 class="font-display text-xl text-rww-dark font-semibold mb-3"><?= e($stap['titel']) ?></h3>
-          <p class="text-rww-muted text-sm leading-relaxed"><?= e($stap['tekst']) ?></p>
-        </div>
-        <?php endforeach; ?>
-      </div>
-
-      <div class="mt-12 text-center fade-in">
-        <p class="text-rww-muted text-sm italic">De kosten voor de tekening worden verrekend met de vervolgopdracht. U betaalt dus alleen als u doorgaat.</p>
-      </div>
-    </div>
-  </section>
-  <!-- /SECTION: werkwijze -->
-
-
-  <!-- SECTION: diensten -->
+    <!-- SECTION: diensten -->
   <section id="diensten" class="py-20 md:py-28 bg-rww-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
@@ -145,21 +93,101 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: diensten -->
 
 
-  <!-- SECTION: reviews -->
-  <section id="reviews" class="py-20 md:py-28 bg-white">
+  <!-- SECTION: werkwijze -->
+  <section id="werkwijze" class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Klanten aan het woord</span>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">5.0 op Google</h2>
-        <div class="flex items-center justify-center gap-2 mb-4">
-          <div class="stars text-2xl">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        </div>
-        <p class="text-rww-muted text-lg">Dit zijn de woorden van onze klanten.</p>
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Onze werkwijze</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
+          Zo werken wij
+        </h2>
       </div>
 
-      <?php $reviews_lang = 'nl'; include __DIR__ . '/includes/reviews.php'; ?>
+      <div class="werkwijze-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+
+        <?php
+        $stappen = [
+          [
+            'nr'    => '1',
+            'img'   => '/images/uploads/177.jpg',
+            'titel' => 'Kennismaking & Wensen',
+            'items' => [
+              'We bespreken jouw wensen, stijl en budget',
+              'WWe bekijken de ruimte en technische mogelijkheden',
+              'JJe deelt inspiratie (modern, hotelstijl, minimalistisch…',
+            ],
+            'cta'   => '👉 De basis voor jouw perfecte badkamer wordt gelegd',
+          ],
+          [
+            'nr'    => '2',
+            'img'   => '/images/uploads/172.jpg',
+            'titel' => 'Ontwerp & Visualisatie',
+            'items' => [
+              'We maken een persoonlijk badkamerontwerp',
+              'Je ziet jouw badkamer in een realistische 3D weergave',
+              'Materialen, tegels en indeling worden gekozen',
+            ],
+            'cta'   => '👉 Je weet vooraf precies hoe het eruit komt te zien',
+          ],
+          [
+            'nr'    => '3',
+            'img'   => '/images/uploads/170.jpg',
+            'titel' => 'Voorbereiding & Renovatie',
+            'items' => [
+              'Oude badkamer wordt verwijderd',
+              'Leidingen, afvoer en elektra worden aangepast',
+              'Alles wordt voorbereid voor plaatsing',
+            ],
+            'cta'   => '👉 Dit is de belangrijkste fase voor een perfect eindresultaat',
+          ],
+          [
+            'nr'    => '4',
+            'img'   => '/images/uploads/108.jpg',
+            'titel' => 'Installatie & Oplevering',
+            'items' => [
+              'Nieuwe badkamer wordt geplaatst en afgewerkt',
+              'Tegels, sanitair en details worden gemonteerd',
+              'Alles wordt netjes opgeleverd',
+            ],
+            'cta'   => 'Binnen korte tijd geniet je van jouw nieuwe badkamer',
+          ],
+        ];
+        foreach ($stappen as $stap): ?>
+        <div class="werkwijze-card">
+          <div class="aspect-[4/3] rounded-lg overflow-hidden mb-6">
+            <img src="<?= e($stap['img']) ?>" alt="Stap <?= $stap['nr'] ?>: <?= e($stap['titel']) ?>" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-stone-700 text-white font-display text-sm font-bold px-3 py-1 rounded"><?= $stap['nr'] ?></span>
+            <h3 class="font-display text-xl text-rww-dark font-semibold"><?= e($stap['titel']) ?></h3>
+          </div>
+          <ul class="space-y-1 mb-4">
+            <?php foreach ($stap['items'] as $item): ?>
+            <li class="flex items-start gap-2 text-rww-muted text-sm leading-relaxed">
+              <span class="text-rww-red mt-1">&#8226;</span>
+              <span><?= e($item) ?></span>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <p class="text-rww-dark text-sm font-medium italic">👉 <?= e($stap['cta']) ?></p>
+        </div>
+        <?php endforeach; ?>
+
+      </div>
     </div>
   </section>
+  <!-- /SECTION: werkwijze -->
+
+
+ <!-- SECTION: reviews -->
+    <section>
+    <div>
+      <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
+        <script defer async src='https://cdn.trustindex.io/loader.js?08389c960054733e4b062cdded1'></script>
+      </div>
+    </div>
+   </section>
   <!-- /SECTION: reviews -->
 
 
