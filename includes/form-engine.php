@@ -65,7 +65,7 @@ function render_form(string $id, bool $showTitle = false): string {
         $reqMark = $required ? ' <span class="text-red-500">*</span>' : '';
 
         $html .= '  <div>' . "\n";
-        $html .= '    <label for="field-' . $name . '" class="block text-sm font-medium text-dark mb-1">' . $label . $reqMark . '</label>' . "\n";
+        $html .= '    <label for="field-' . $name . '" class="block text-sm font-medium text-white mb-1">' . $label . $reqMark . '</label>' . "\n";
 
         switch ($type) {
             case 'textarea':

@@ -44,7 +44,50 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: hero -->
 
 
-  <!-- SECTION: werkwijze -->
+  <!-- SECTION: diensten -->
+  <section id="diensten" class="py-20 md:py-28 bg-rww-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Wat wij doen</span>
+        <h2 data-field="diensten_titel" class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
+          <?= e(page_content('home', 'diensten_titel', 'Het hele huis, niet één klus')) ?>
+        </h2>
+        <p class="text-rww-muted text-lg">Eén aannemer, één aanspreekpunt, één planning. Van badkamer tot zolder, van keuken tot buitenschilderwerk.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        <?php
+        $diensten = [
+          ['titel' => 'Badkamers op maat', 'tekst' => 'Complete badkamerrenovatie inclusief tegelwerk, sanitair en op maat gemaakte meubels van beton ciré.', 'img' => '/images/uploads/170.jpg', 'alt' => 'Badkamerrenovatie', 'link' => 'badkamer.php'],
+          ['titel' => 'Keukens op maat', 'tekst' => 'Van ontwerp tot plaatsing. Agnieszka ontwerpt, Raphaël bouwt. Inclusief leidingwerk en afwerking.', 'img' => '/images/uploads/53.jpg', 'alt' => 'Keukenrenovatie', 'link' => 'keuken.php'],
+          ['titel' => 'Complete woningrenovatie', 'tekst' => 'Badkamer, keuken, vloer, zolder, schilderwerk — alles in één keer, door één team.', 'img' => '/images/uploads/185.jpg', 'alt' => 'Complete woningrenovatie', 'link' => 'diensten.php#nieuwbouw'],
+          ['titel' => 'Stucwerk & afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => '/images/uploads/177.jpg', 'alt' => 'Stucwerk', 'link' => 'diensten.php#stucwerk'],
+          ['titel' => 'Vloeren & tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => '/images/uploads/20180410_104638.jpg', 'alt' => 'Vloerverwarming', 'link' => 'diensten.php#vloeren'],
+          ['titel' => 'Interieurontwerp & visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => '/images/uploads/20230329_151317.jpg', 'alt' => 'Interieurontwerp', 'link' => 'diensten.php#interieur'],
+        ];
+        foreach ($diensten as $d): ?>
+        <div class="project-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="<?= e($d['img']) ?>" alt="<?= e($d['alt']) ?>" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display text-xl text-rww-dark font-semibold mb-2"><?= e($d['titel']) ?></h3>
+            <p class="text-rww-muted text-sm leading-relaxed"><?= e($d['tekst']) ?></p>
+            <a href="<?= e($d['link']) ?>" class="inline-flex items-center mt-auto pt-4 text-rww-red hover:text-rww-red-light font-semibold text-sm transition-colors">
+              Meer informatie
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: diensten -->
+
+    <!-- SECTION: werkwijze -->
   <section id="werkwijze" class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
@@ -95,44 +138,6 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: werkwijze -->
 
 
-  <!-- SECTION: diensten -->
-  <section id="diensten" class="py-20 md:py-28 bg-rww-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Wat wij doen</span>
-        <h2 data-field="diensten_titel" class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
-          <?= e(page_content('home', 'diensten_titel', 'Het hele huis, niet één klus')) ?>
-        </h2>
-        <p class="text-rww-muted text-lg">Eén aannemer, één aanspreekpunt, één planning. Van badkamer tot zolder, van keuken tot buitenschilderwerk.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
-        <?php
-        $diensten = [
-          ['titel' => 'Badkamers op maat', 'tekst' => 'Complete badkamerrenovatie inclusief tegelwerk, sanitair en op maat gemaakte meubels van beton ciré.', 'img' => '/images/uploads/20230329_151357.jpg', 'alt' => 'Badkamerrenovatie'],
-          ['titel' => 'Keukens op maat', 'tekst' => 'Van ontwerp tot plaatsing. Agnieszka ontwerpt, Raphaël bouwt. Inclusief leidingwerk en afwerking.', 'img' => '/images/uploads/20230329_151320.jpg', 'alt' => 'Keukenrenovatie'],
-          ['titel' => 'Complete woningrenovatie', 'tekst' => 'Badkamer, keuken, vloer, zolder, schilderwerk — alles in één keer, door één team.', 'img' => '/images/uploads/IMG-20230330-WA0000 (1).jpeg', 'alt' => 'Complete woningrenovatie'],
-          ['titel' => 'Stucwerk & afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => '/images/uploads/IMG-20230330-WA0002.jpg', 'alt' => 'Stucwerk'],
-          ['titel' => 'Vloeren & tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => '/images/uploads/20180410_104638.jpg', 'alt' => 'Vloerverwarming'],
-          ['titel' => 'Interieurontwerp & visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => '/images/uploads/20230329_151317.jpg', 'alt' => 'Interieurontwerp'],
-        ];
-        foreach ($diensten as $d): ?>
-        <div class="project-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="<?= e($d['img']) ?>" alt="<?= e($d['alt']) ?>" class="w-full h-full object-cover" loading="lazy">
-          </div>
-          <div class="p-6">
-            <h3 class="font-display text-xl text-rww-dark font-semibold mb-2"><?= e($d['titel']) ?></h3>
-            <p class="text-rww-muted text-sm leading-relaxed"><?= e($d['tekst']) ?></p>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-  <!-- /SECTION: diensten -->
-
-
   <!-- SECTION: projecten -->
   <section id="projecten" class="py-20 md:py-28 bg-rww-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,24 +166,6 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </section>
   <!-- /SECTION: projecten -->
-
-
-  <!-- SECTION: reviews -->
-  <section id="reviews" class="py-20 md:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Klanten aan het woord</span>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">5.0 op Google</h2>
-        <div class="flex items-center justify-center gap-2 mb-4">
-          <div class="stars text-2xl">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        </div>
-        <p class="text-rww-muted text-lg">Geen samenvatting. Dit zijn de woorden van onze klanten.</p>
-      </div>
-
-      <?php $reviews_lang = 'nl'; include __DIR__ . '/includes/reviews.php'; ?>
-    </div>
-  </section>
-  <!-- /SECTION: reviews -->
 
 
   <!-- SECTION: over-ons -->

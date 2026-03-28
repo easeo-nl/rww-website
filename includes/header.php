@@ -91,7 +91,7 @@ $is_polski = ($html_lang === 'pl');
         <?php else: ?>
         <nav class="hidden md:flex items-center gap-8">
           <a href="#werkwijze" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Werkwijze</a>
-          <a href="#diensten" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Diensten</a>
+          <a href="diensten.php" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Diensten</a>
           <a href="#projecten" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Projecten</a>
           <a href="#reviews" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Reviews</a>
           <a href="#over-ons" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Over ons</a>
@@ -129,7 +129,7 @@ $is_polski = ($html_lang === 'pl');
         <a href="#kontakt" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Zapytaj o wycen&#281;</a>
         <?php else: ?>
         <a href="#werkwijze" class="text-stone-300 hover:text-white text-lg py-2">Werkwijze</a>
-        <a href="#diensten" class="text-stone-300 hover:text-white text-lg py-2">Diensten</a>
+        <a href="diensten.php" class="text-stone-300 hover:text-white text-lg py-2">Diensten</a>
         <a href="#projecten" class="text-stone-300 hover:text-white text-lg py-2">Projecten</a>
         <a href="#reviews" class="text-stone-300 hover:text-white text-lg py-2">Reviews</a>
         <a href="#over-ons" class="text-stone-300 hover:text-white text-lg py-2">Over ons</a>

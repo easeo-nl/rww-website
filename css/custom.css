@@ -86,6 +86,27 @@ html {
   letter-spacing: 2px;
 }
 
+/* Form buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+.btn-primary {
+  background-color: #991B1B;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #B91C1C;
+}
+
 /* Form focus states */
 input:focus, textarea:focus, select:focus {
   outline: none;
@@ -102,6 +123,22 @@ input:focus, textarea:focus, select:focus {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Werkwijze stappen — subgrid alignment */
+.werkwijze-card {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .werkwijze-grid {
+    grid-template-rows: auto auto 1fr auto;
+  }
+  .werkwijze-card {
+    grid-row: span 4;
+    display: grid;
+    grid-template-rows: subgrid;
+  }
 }
 
 /* Contact floating button mobile */
