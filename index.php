@@ -147,22 +147,58 @@ require_once __DIR__ . '/includes/header.php';
         <p class="text-stone-400 text-lg">Van badkamerrenovatie tot complete woningverbouwing. Bekijk een selectie van ons werk in de regio.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 fade-in">
-        <?php
-        $projecten = array_filter(get_published_posts(), fn($p) => ($p['categorie'] ?? '') === 'projecten');
-        usort($projecten, fn($a, $b) => strcmp($b['datum'] ?? '', $a['datum'] ?? ''));
-        foreach ($projecten as $project): ?>
-        <div class="project-card group relative rounded-lg overflow-hidden aspect-[4/3]">
-          <img src="<?= e($project['afbeelding'] ?? '') ?>" alt="<?= e($project['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-            <div class="absolute bottom-0 left-0 right-0 p-5">
-              <h3 class="text-white font-display text-lg font-semibold"><?= e($project['titel'] ?? '') ?></h3>
-              <p class="text-stone-300 text-sm"><?= e($project['samenvatting'] ?? '') ?></p>
+      <?php
+      $all_projecten = array_filter(get_published_posts(), fn($p) => ($p['categorie'] ?? '') === 'projecten');
+      usort($all_projecten, fn($a, $b) => strcmp($b['datum'] ?? '', $a['datum'] ?? ''));
+
+      $slider_groups = [
+          'badkamer' => ['label' => 'Badkamer',           'posts' => []],
+          'keuken'   => ['label' => 'Keuken',              'posts' => []],
+          'overig'   => ['label' => 'Toilet &amp; Vloer',  'posts' => []],
+      ];
+
+      foreach ($all_projecten as $project) {
+          $groep = $project['groep'] ?? 'overig';
+          if (!isset($slider_groups[$groep])) $groep = 'overig';
+          $slider_groups[$groep]['posts'][] = $project;
+      }
+      ?>
+
+      <?php foreach ($slider_groups as $groep_key => $groep): ?>
+      <?php if (empty($groep['posts'])) continue; ?>
+      <div class="mb-12 last:mb-0 fade-in">
+        <h3 class="text-white font-display text-xl font-semibold mb-6"><?= $groep['label'] ?></h3>
+        <div class="slider-container" data-slider>
+          <div class="slider-track" data-slider-track>
+            <?php foreach ($groep['posts'] as $project): ?>
+            <div class="slider-slide">
+              <div class="project-card group relative rounded-lg overflow-hidden aspect-[4/3]">
+                <img src="<?= e($project['afbeelding'] ?? '') ?>" alt="<?= e($project['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <h4 class="text-white font-display text-lg font-semibold"><?= e($project['titel'] ?? '') ?></h4>
+                    <p class="text-stone-300 text-sm"><?= e($project['samenvatting'] ?? '') ?></p>
+                  </div>
+                </div>
+              </div>
             </div>
+            <?php endforeach; ?>
           </div>
+
+          <?php if (count($groep['posts']) > 1): ?>
+          <div class="slider-controls flex items-center justify-center gap-4 mt-6">
+            <button class="slider-btn-prev" aria-label="Vorige">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="slider-dots" data-slider-dots></div>
+            <button class="slider-btn-next" aria-label="Volgende">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <?php endif; ?>
         </div>
-        <?php endforeach; ?>
       </div>
+      <?php endforeach; ?>
     </div>
   </section>
   <!-- /SECTION: projecten -->
@@ -203,6 +239,17 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </section>
   <!-- /SECTION: over-ons -->
+
+  <!-- SECTION: reviews -->
+    <section>
+    <div>
+      <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
+        <script defer async src='https://cdn.trustindex.io/loader.js?08389c960054733e4b062cdded1'></script>
+      </div>
+    </div>
+   </section>
+  <!-- /SECTION: reviews -->
 
 
   <!-- SECTION: contact -->
