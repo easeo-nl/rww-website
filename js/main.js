@@ -100,6 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var total   = slides.length;
 
     function getSlidesPerView() {
+      var override = parseInt(container.dataset.sliderPerView, 10);
+      if (!isNaN(override) && override > 0) return override;
       var w = container.offsetWidth;
       if (w >= 1024) return 3;
       if (w >= 640)  return 2;

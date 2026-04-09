@@ -1,6 +1,14 @@
 <?php
 require_once __DIR__ . '/includes/content.php';
+require_once __DIR__ . '/includes/blog-engine.php';
 require_once __DIR__ . '/includes/form-engine.php';
+
+// Laad alle diensten-foto's gegroepeerd per groep
+$diensten_fotos = [];
+foreach (array_filter(get_published_posts(), fn($p) => ($p['categorie'] ?? '') === 'diensten') as $p) {
+    $g = $p['groep'] ?? '';
+    if ($g) $diensten_fotos[$g][] = $p;
+}
 
 $pageTitle = page_content('diensten', 'seo_title', 'Onze diensten — RWW Bouw Amersfoort');
 $metaDescription = page_content('diensten', 'seo_description', 'Nieuwbouw, afbouw, renovatie, stucwerk, tegelwerk en interieurontwerp in Amersfoort en omgeving. Alles door één team.');
@@ -97,8 +105,28 @@ require_once __DIR__ . '/includes/header.php';
           <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
         </div>
         <div class="fade-in">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/uploads/20180410_104638.jpg" alt="Nieuwbouw door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+          <?php $fotos = $diensten_fotos['nieuwbouw'] ?? []; ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding'] ?? '') ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/20180410_104638.jpg" alt="Nieuwbouw door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -112,8 +140,28 @@ require_once __DIR__ . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in order-2 lg:order-1">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/uploads/IMG-20230330-WA0000.jpeg" alt="Afbouw door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+          <?php $fotos = $diensten_fotos['afbouw'] ?? []; ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding'] ?? '') ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/IMG-20230330-WA0000.jpeg" alt="Afbouw door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
         <div class="fade-in order-1 lg:order-2">
@@ -155,8 +203,28 @@ require_once __DIR__ . '/includes/header.php';
           <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
         </div>
         <div class="fade-in">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/uploads/IMG-20230330-WA0000 (1).jpeg" alt="Renovatie door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+          <?php $fotos = $diensten_fotos['renovatie'] ?? []; ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding'] ?? '') ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/IMG-20230330-WA0000 (1).jpeg" alt="Renovatie door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -170,8 +238,28 @@ require_once __DIR__ . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in order-2 lg:order-1">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/uploads/20230329_151320.jpg" alt="Complete woningrenovatie door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+          <?php $fotos = $diensten_fotos['woningrenovatie'] ?? []; ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding'] ?? '') ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/20230329_151320.jpg" alt="Complete woningrenovatie door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
         <div class="fade-in order-1 lg:order-2">
@@ -213,8 +301,28 @@ require_once __DIR__ . '/includes/header.php';
           <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
         </div>
         <div class="fade-in">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/uploads/IMG-20230330-WA0002.jpg" alt="Stucwerk en afwerking door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+          <?php $fotos = $diensten_fotos['stucwerk'] ?? []; ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding'] ?? '') ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/IMG-20230330-WA0002.jpg" alt="Stucwerk en afwerking door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -228,8 +336,28 @@ require_once __DIR__ . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in order-2 lg:order-1">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/uploads/20230329_151357.jpg" alt="Vloeren en tegelwerk door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+          <?php $fotos = $diensten_fotos['vloeren'] ?? []; ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding'] ?? '') ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/20230329_151357.jpg" alt="Vloeren en tegelwerk door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
         <div class="fade-in order-1 lg:order-2">
@@ -283,8 +411,28 @@ require_once __DIR__ . '/includes/header.php';
           <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Afspraak plannen</a>
         </div>
         <div class="fade-in">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-            <img src="/images/uploads/20230329_151317.jpg" alt="Interieurontwerp door Agnieszka Sejfryd" class="w-full h-full object-cover" loading="lazy">
+          <?php $fotos = $diensten_fotos['interieur'] ?? []; ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding'] ?? '') ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/20230329_151317.jpg" alt="Interieurontwerp door Agnieszka Sejfryd" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>

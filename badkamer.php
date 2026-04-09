@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/content.php';
+require_once __DIR__ . '/includes/blog-engine.php';
 require_once __DIR__ . '/includes/form-engine.php';
 
 $pageTitle = page_content('badkamer', 'seo_title', 'Badkamerrenovatie op maat — RWW Bouw');
@@ -179,7 +180,59 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: werkwijze -->
 
 
- <!-- SECTION: reviews -->
+  <!-- SECTION: projecten -->
+  <?php
+  $badkamer_fotos = array_filter(
+      get_published_posts(),
+      fn($p) => ($p['categorie'] ?? '') === 'projecten' && ($p['groep'] ?? '') === 'badkamer'
+  );
+  usort($badkamer_fotos, fn($a, $b) => strcmp($b['datum'] ?? '', $a['datum'] ?? ''));
+  $badkamer_fotos = array_values($badkamer_fotos);
+  ?>
+  <?php if (!empty($badkamer_fotos)): ?>
+  <section class="py-20 md:py-28 bg-rww-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Ons werk</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-4 mb-6 font-bold">Onze badkamers</h2>
+      </div>
+      <div class="fade-in">
+        <div class="slider-container" data-slider>
+          <div class="slider-track" data-slider-track>
+            <?php foreach ($badkamer_fotos as $project): ?>
+            <div class="slider-slide">
+              <div class="project-card group relative rounded-lg overflow-hidden aspect-[4/3]">
+                <img src="<?= e($project['afbeelding'] ?? '') ?>" alt="<?= e($project['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <h4 class="text-white font-display text-lg font-semibold"><?= e($project['titel'] ?? '') ?></h4>
+                    <p class="text-stone-300 text-sm"><?= e($project['samenvatting'] ?? '') ?></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php endforeach; ?>
+          </div>
+          <?php if (count($badkamer_fotos) > 1): ?>
+          <div class="slider-controls flex items-center justify-center gap-4 mt-6">
+            <button class="slider-btn-prev" aria-label="Vorige">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="slider-dots" data-slider-dots></div>
+            <button class="slider-btn-next" aria-label="Volgende">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+  <!-- /SECTION: projecten -->
+
+
+   <!-- SECTION: reviews -->
     <section>
     <div>
       <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
