@@ -47,6 +47,18 @@ html {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Mobile menu */
 .mobile-menu {
   transform: translateX(100%);

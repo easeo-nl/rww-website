@@ -14,20 +14,28 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBtn = document.getElementById('menu-toggle');
   const menuClose = document.getElementById('menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
+  const menuOverlay = document.getElementById('menu-overlay');
   const menuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 
   function openMenu() {
     mobileMenu.classList.add('open');
+    menuOverlay.classList.add('open');
+    menuOverlay.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     mobileMenu.classList.remove('open');
+    menuOverlay.classList.remove('open');
+    setTimeout(() => {
+      menuOverlay.classList.add('hidden');
+    }, 300);
     document.body.style.overflow = '';
   }
 
   if (menuBtn) menuBtn.addEventListener('click', openMenu);
   if (menuClose) menuClose.addEventListener('click', closeMenu);
+  if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
   menuLinks.forEach(function (link) {
     link.addEventListener('click', closeMenu);
   });
