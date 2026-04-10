@@ -181,18 +181,6 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: werkwijze -->
 
 
- <!-- SECTION: reviews -->
-    <section>
-    <div>
-      <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
-        <script defer async src='https://cdn.trustindex.io/loader.js?08389c960054733e4b062cdded1'></script>
-      </div>
-    </div>
-   </section>
-  <!-- /SECTION: reviews -->
-
-
   <!-- SECTION: projecten -->
   <?php
   $keuken_fotos = array_filter(
@@ -243,6 +231,18 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <?php endif; ?>
   <!-- /SECTION: projecten -->
+   
+
+   <!-- SECTION: reviews -->
+    <section>
+    <div>
+      <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
+        <script defer async src='https://cdn.trustindex.io/loader.js?08389c960054733e4b062cdded1'></script>
+      </div>
+    </div>
+   </section>
+  <!-- /SECTION: reviews -->
 
 
   <!-- SECTION: contact -->
