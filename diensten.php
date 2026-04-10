@@ -441,21 +441,15 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: interieur -->
 
 
-  <!-- SECTION: reviews -->
-  <section id="reviews" class="py-20 md:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Klanten aan het woord</span>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">5.0 op Google</h2>
-        <div class="flex items-center justify-center gap-2 mb-4">
-          <div class="stars text-2xl">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        </div>
-        <p class="text-rww-muted text-lg">Dit zijn de woorden van onze klanten.</p>
+   <!-- SECTION: reviews -->
+    <section>
+    <div>
+      <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
+        <script defer async src='https://cdn.trustindex.io/loader.js?08389c960054733e4b062cdded1'></script>
       </div>
-
-      <?php $reviews_lang = 'nl'; include __DIR__ . '/includes/reviews.php'; ?>
     </div>
-  </section>
+   </section>
   <!-- /SECTION: reviews -->
 
 
@@ -475,7 +469,13 @@ require_once __DIR__ . '/includes/header.php';
               <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
                 <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
-              <div><p class="font-semibold text-lg">Bel Raphaël</p><p class="text-stone-400">06 160 357 54</p></div>
+              <div><p class="font-semibold text-lg">Whatsapp</p><p class="text-stone-400">06 160 357 54</p></div>
+            </a>
+            <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+              <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div><p class="font-semibold text-lg">Bel Raphaël</p><p class="text-stone-400">06 274 544 16</p></div>
             </a>
             <a href="mailto:<?= e(site('company.email')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
               <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
