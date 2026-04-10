@@ -106,8 +106,8 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['nieuwbouw'] ?? []; ?>
-          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
-            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
               <div class="slider-track h-full" data-slider-track>
                 <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
                 <div class="slider-slide h-full">
@@ -141,8 +141,8 @@ require_once __DIR__ . '/includes/header.php';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in order-2 lg:order-1">
           <?php $fotos = $diensten_fotos['afbouw'] ?? []; ?>
-          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
-            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
               <div class="slider-track h-full" data-slider-track>
                 <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
                 <div class="slider-slide h-full">
@@ -204,8 +204,8 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['renovatie'] ?? []; ?>
-          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
-            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
               <div class="slider-track h-full" data-slider-track>
                 <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
                 <div class="slider-slide h-full">
@@ -239,8 +239,8 @@ require_once __DIR__ . '/includes/header.php';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in order-2 lg:order-1">
           <?php $fotos = $diensten_fotos['woningrenovatie'] ?? []; ?>
-          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
-            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
               <div class="slider-track h-full" data-slider-track>
                 <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
                 <div class="slider-slide h-full">
@@ -302,8 +302,8 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['stucwerk'] ?? []; ?>
-          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
-            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
               <div class="slider-track h-full" data-slider-track>
                 <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
                 <div class="slider-slide h-full">
@@ -337,8 +337,8 @@ require_once __DIR__ . '/includes/header.php';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in order-2 lg:order-1">
           <?php $fotos = $diensten_fotos['vloeren'] ?? []; ?>
-          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
-            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
               <div class="slider-track h-full" data-slider-track>
                 <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
                 <div class="slider-slide h-full">
@@ -412,8 +412,8 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['interieur'] ?? []; ?>
-          <div class="aspect-[4/3] rounded-lg shadow-lg relative">
-            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg" data-slider data-slider-per-view="1">
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
               <div class="slider-track h-full" data-slider-track>
                 <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
                 <div class="slider-slide h-full">
