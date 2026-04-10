@@ -241,7 +241,7 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: over-ons -->
 
   <!-- SECTION: reviews -->
-    <section>
+    <section id="reviews" class="py-20 md:py-28 bg-white">
     <div>
       <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
