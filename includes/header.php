@@ -58,7 +58,7 @@ $is_polski = ($html_lang === 'pl');
   </script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/custom.css?v=<?= filemtime(__DIR__ . '/../css/custom.css') ?>">
 
   <?php include __DIR__ . '/tracking-head.php'; ?>
 </head>

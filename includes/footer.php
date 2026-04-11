@@ -77,6 +77,6 @@ $is_polski = ($htmlLang ?? 'nl') === 'pl';
   <?php include __DIR__ . '/cookie-consent.php'; ?>
 
   <!-- JavaScript -->
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js?v=<?= filemtime(__DIR__ . '/../js/main.js') ?>"></script>
 </body>
 </html>
