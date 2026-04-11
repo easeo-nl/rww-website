@@ -109,6 +109,9 @@ $is_polski = ($html_lang === 'pl');
       </div>
     </div>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay" class="mobile-menu-overlay fixed inset-0 z-40 md:hidden hidden"></div>
+
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-72 bg-rww-dark z-50 shadow-2xl md:hidden">
       <div class="flex items-center justify-between p-4 border-b border-stone-800">
