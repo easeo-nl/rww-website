@@ -20,7 +20,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
       <div class="max-w-2xl">
         <h1 data-field="hero_titel" class="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mb-6">
-          <?= page_content('home', 'hero_titel', 'Renovatie &amp; verbouwing<br>met plan') ?>
+          <?= page_content('home', 'hero_titel', 'Renovatie en verbouwing<br>met plan') ?>
         </h1>
         <p data-field="hero_subtitel" class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
           <?= e(page_content('home', 'hero_subtitel', '')) ?>
@@ -61,9 +61,9 @@ require_once __DIR__ . '/includes/header.php';
           ['titel' => 'Badkamers op maat', 'tekst' => 'Complete badkamerrenovatie inclusief tegelwerk, sanitair en op maat gemaakte meubels van beton ciré.', 'img' => '/images/uploads/170.jpg', 'alt' => 'Badkamerrenovatie', 'link' => 'badkamer.php'],
           ['titel' => 'Keukens op maat', 'tekst' => 'Van ontwerp tot plaatsing. Agnieszka ontwerpt, Raphaël bouwt. Inclusief leidingwerk en afwerking.', 'img' => '/images/uploads/53.jpg', 'alt' => 'Keukenrenovatie', 'link' => 'keuken.php'],
           ['titel' => 'Complete woningrenovatie', 'tekst' => 'Badkamer, keuken, vloer, zolder, schilderwerk — alles in één keer, door één team.', 'img' => '/images/uploads/185.jpg', 'alt' => 'Complete woningrenovatie', 'link' => 'diensten.php#nieuwbouw'],
-          ['titel' => 'Stucwerk & afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => '/images/uploads/177.jpg', 'alt' => 'Stucwerk', 'link' => 'diensten.php#stucwerk'],
-          ['titel' => 'Vloeren & tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => '/images/uploads/20180410_104638.jpg', 'alt' => 'Vloerverwarming', 'link' => 'diensten.php#vloeren'],
-          ['titel' => 'Interieurontwerp & visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => '/images/uploads/20230329_151317.jpg', 'alt' => 'Interieurontwerp', 'link' => 'diensten.php#interieur'],
+          ['titel' => 'Stucwerk en afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => '/images/uploads/177.jpg', 'alt' => 'Stucwerk', 'link' => 'diensten.php#stucwerk'],
+          ['titel' => 'Vloeren en tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => '/images/uploads/20180410_104638.jpg', 'alt' => 'Vloerverwarming', 'link' => 'diensten.php#vloeren'],
+          ['titel' => 'Interieurontwerp en visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => '/images/uploads/20230329_151317.jpg', 'alt' => 'Interieurontwerp', 'link' => 'diensten.php#interieur'],
         ];
         foreach ($diensten as $d): ?>
         <div class="project-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
@@ -106,7 +106,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="text-center md:text-left">
           <h3 class="font-display text-xl text-rww-dark font-semibold mb-2">Agnieszka Sejfryd</h3>
-          <p class="text-rww-red text-sm font-medium mb-2">Interieurarchitect & designer</p>
+          <p class="text-rww-red text-sm font-medium mb-2">Interieurarchitect en designer</p>
           <p class="text-rww-muted text-sm leading-relaxed max-w-lg">Agnieszka maakt professionele bouwtekeningen en 3D-visualisaties voordat er een hamer wordt opgepakt. U ziet exact wat u krijgt. De kosten voor de tekening worden verrekend met de vervolgopdracht.</p>
         </div>
       </div>
@@ -114,7 +114,7 @@ require_once __DIR__ . '/includes/header.php';
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
         <?php
         $stappen = [
-          ['nr' => '1', 'titel' => 'Inmeting & ontwerp', 'tekst' => 'Agnieszka komt bij u langs, meet alles op en maakt een professionele bouwtekening op maat.'],
+          ['nr' => '1', 'titel' => 'Inmeting en ontwerp', 'tekst' => 'Agnieszka komt bij u langs, meet alles op en maakt een professionele bouwtekening op maat.'],
           ['nr' => '2', 'titel' => '3D-visualisatie', 'tekst' => 'U ziet exact hoe uw nieuwe ruimte eruitziet. Geen verrassingen, maar een helder beeld vooraf.'],
           ['nr' => '3', 'titel' => 'Heldere offerte', 'tekst' => 'Op basis van de tekening ontvangt u een duidelijke offerte. U weet precies wat het kost.'],
           ['nr' => '4', 'titel' => 'Vakkundige uitvoering', 'tekst' => 'Raphaël en zijn team bouwen precies wat getekend is. Tot in de puntjes afgewerkt.'],
@@ -154,7 +154,7 @@ require_once __DIR__ . '/includes/header.php';
       $slider_groups = [
           'badkamer' => ['label' => 'Badkamer',           'posts' => []],
           'keuken'   => ['label' => 'Keuken',              'posts' => []],
-          'overig'   => ['label' => 'Toilet &amp; Vloer',  'posts' => []],
+          'overig'   => ['label' => 'Toilet en Vloer',  'posts' => []],
       ];
 
       foreach ($all_projecten as $project) {

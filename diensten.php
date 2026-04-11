@@ -287,7 +287,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in">
-          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Stucwerk & afwerking</span>
+          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Stucwerk en afwerking</span>
           <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-6 font-bold">Strakke wanden, nette oplevering</h2>
           <p class="text-rww-muted text-lg leading-relaxed mb-6">Stucwerk is het verschil tussen een ruwe verbouwing en een afgewerkte woning. Wij stuken wanden en plafonds tot een glad, spuitklaar oppervlak — of geven ze een specifieke afwerking zoals beton ciré of microbeton.</p>
           <ul class="space-y-3 mb-8">
@@ -361,7 +361,7 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         </div>
         <div class="fade-in order-1 lg:order-2">
-          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Vloeren & tegelwerk</span>
+          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Vloeren en tegelwerk</span>
           <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-6 font-bold">Strak gelegd, netjes afgewerkt</h2>
           <p class="text-rww-muted text-lg leading-relaxed mb-6">Van groot formaat tegels tot patroonvloeren — wij leggen ze waterpas en strak. In de badkamer, keuken, hal of woonkamer. Agnieszka helpt u met de keuze; Raphaël legt ze neer.</p>
           <ul class="space-y-3 mb-8">
@@ -385,7 +385,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in">
-          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Interieurontwerp & visualisatie</span>
+          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Interieurontwerp en visualisatie</span>
           <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-6 font-bold">U ziet het eerst op papier</h2>
           <p class="text-rww-muted text-lg leading-relaxed mb-6">Agnieszka Sejfryd is interieurarchitect en maakt professionele bouwtekeningen en 3D-visualisaties. U ziet uw verbouwing precies zoals hij wordt — voordat er één steen wordt verplaatst. De kosten voor de tekening worden verrekend met de vervolgopdracht.</p>
 
@@ -395,7 +395,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
             <div>
               <p class="font-display text-rww-dark font-semibold">Agnieszka Sejfryd</p>
-              <p class="text-rww-red text-sm font-medium mb-1">Interieurarchitect & designer</p>
+              <p class="text-rww-red text-sm font-medium mb-1">Interieurarchitect en designer</p>
               <p class="text-rww-muted text-sm">Opleiding interieurarchitectuur. Werkt uitsluitend op maat — geen standaardontwerpen.</p>
             </div>
           </div>

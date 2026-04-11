@@ -66,7 +66,7 @@ require_once __DIR__ . '/includes/header.php';
             'alt'   => 'Keukenplaatsing door RWW Bouw',
           ],
           [
-            'titel' => 'Elektra & loodgieterwerk',
+            'titel' => 'Elektra en loodgieterwerk',
             'tekst' => 'Alle aansluitingen voor apparatuur, water en afvoer. Geen losse onderaannemers — één team regelt alles van A tot Z.',
             'img'   => '/images/uploads/20230329_151355.jpg',
             'alt'   => 'Elektra en loodgieterwerk keuken',
@@ -112,7 +112,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '1',
             'img'   => '/images/uploads/53.jpg',
-            'titel' => 'Kennismaking & Wensen',
+            'titel' => 'Kennismaking en Wensen',
             'items' => [
               'We bespreken jouw wensen, stijl en budget',
               'We bekijken de ruimte en mogelijkheden',
@@ -123,7 +123,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '2',
             'img'   => '/images/uploads/66.jpg',
-            'titel' => 'Ontwerp & 3D Visualisatie',
+            'titel' => 'Ontwerp en 3D Visualisatie',
             'items' => [
               'We maken een persoonlijk keukenontwerp',
               'Je ziet jouw keuken in een realistische 3D weergave',
@@ -134,7 +134,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '3',
             'img'   => '/images/uploads/69.jpg',
-            'titel' => 'Productie & Voorbereiding',
+            'titel' => 'Productie en Voorbereiding',
             'items' => [
               'Materialen worden besteld en op maat gemaakt',
               'We plannen de plaatsing',
@@ -145,7 +145,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '4',
             'img'   => '/images/uploads/60.jpg',
-            'titel' => 'Levering & Installatie',
+            'titel' => 'Levering en Installatie',
             'items' => [
               'De keuken wordt geleverd en geplaatst',
               'Alles wordt netjes afgewerkt',

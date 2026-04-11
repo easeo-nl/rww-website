@@ -20,7 +20,7 @@ $is_polski = ($htmlLang ?? 'nl') === 'pl';
             <?php if ($is_polski): ?>
             Remonty i przebudowy w Amersfoort, Bunschoten-Spakenburg i okolicach. Najpierw projekt, potem budowa.
             <?php else: ?>
-            Renovatie &amp; verbouwing in Amersfoort, Bunschoten-Spakenburg en omgeving. Eerst tekenen, dan bouwen.
+            Renovatie en verbouwing in Amersfoort, Bunschoten-Spakenburg en omgeving. Eerst tekenen, dan bouwen.
             <?php endif; ?>
           </p>
         </div>
@@ -38,8 +38,8 @@ $is_polski = ($htmlLang ?? 'nl') === 'pl';
             <li><a href="/badkamer.php" class="hover:text-stone-300 transition-colors">Badkamers op maat</a></li>
             <li><a href="/keuken.php" class="hover:text-stone-300 transition-colors">Keukens op maat</a></li>
             <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Complete woningrenovatie</a></li>
-            <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Stucwerk &amp; afwerking</a></li>
-            <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Vloeren &amp; tegelwerk</a></li>
+            <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Stucwerk en afwerking</a></li>
+            <li><a href="#diensten" class="hover:text-stone-300 transition-colors">Vloeren en tegelwerk</a></li>
             <?php endif; ?>
           </ul>
         </div>
@@ -49,7 +49,7 @@ $is_polski = ($htmlLang ?? 'nl') === 'pl';
           <ul class="space-y-2 text-stone-500 text-sm">
             <li><a href="tel:<?= e(site('company.phone')) ?>" class="hover:text-stone-300 transition-colors">06 160 357 54</a></li>
             <li><a href="mailto:<?= e(site('company.email')) ?>" class="hover:text-stone-300 transition-colors"><?= e(site('company.email')) ?></a></li>
-            <li>Amersfoort &amp; Bunschoten-Spakenburg</li>
+            <li>Amersfoort en Bunschoten-Spakenburg</li>
           </ul>
           <?php if ($is_polski): ?>
           <div class="mt-4">

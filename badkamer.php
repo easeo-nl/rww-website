@@ -71,7 +71,7 @@ require_once __DIR__ . '/includes/header.php';
             'alt'   => 'Sanitair badkamer',
           ],
           [
-            'titel' => 'Beton ciré & microbeton',
+            'titel' => 'Beton ciré en microbeton',
             'tekst' => 'Betonlook-afwerking op wanden en vloer. Naadloos, waterdicht en super strak. Agnieszka adviseert over kleur en textuur.',
             'img'   => '/images/uploads/IMG-20230330-WA0002.jpg',
             'alt'   => 'Beton ciré badkamer',
@@ -111,7 +111,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '1',
             'img'   => '/images/uploads/177.jpg',
-            'titel' => 'Kennismaking & Wensen',
+            'titel' => 'Kennismaking en Wensen',
             'items' => [
               'We bespreken jouw wensen, stijl en budget',
               'WWe bekijken de ruimte en technische mogelijkheden',
@@ -122,7 +122,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '2',
             'img'   => '/images/uploads/172.jpg',
-            'titel' => 'Ontwerp & Visualisatie',
+            'titel' => 'Ontwerp en Visualisatie',
             'items' => [
               'We maken een persoonlijk badkamerontwerp',
               'Je ziet jouw badkamer in een realistische 3D weergave',
@@ -133,7 +133,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '3',
             'img'   => '/images/uploads/170.jpg',
-            'titel' => 'Voorbereiding & Renovatie',
+            'titel' => 'Voorbereiding en Renovatie',
             'items' => [
               'Oude badkamer wordt verwijderd',
               'Leidingen, afvoer en elektra worden aangepast',
@@ -144,7 +144,7 @@ require_once __DIR__ . '/includes/header.php';
           [
             'nr'    => '4',
             'img'   => '/images/uploads/108.jpg',
-            'titel' => 'Installatie & Oplevering',
+            'titel' => 'Installatie en Oplevering',
             'items' => [
               'Nieuwe badkamer wordt geplaatst en afgewerkt',
               'Tegels, sanitair en details worden gemonteerd',
