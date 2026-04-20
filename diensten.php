@@ -311,7 +311,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <?php endforeach; else: ?>
                 <div class="slider-slide h-full">
-                  <img src="/images/uploads/IMG-20230330-WA0002.jpg" alt="Stucwerk en afwerking door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                  <img src="/images/uploads/stucwerk/PHOTO-2026-04-09-09-05-23 3.jpg" alt="Stucwerk en afwerking door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
                 </div>
                 <?php endif; ?>
               </div>
