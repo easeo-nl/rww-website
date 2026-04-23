@@ -19,10 +19,16 @@ jobs:
       - name: Configureer SSH
         run: |
           mkdir -p ~/.ssh
-          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
+          # tr -d '\r' vangt het geval af dat de secret als CRLF is geplakt.
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          printf '%s\n' "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          printf '%s\n' "${{ secrets.DEPLOY_KNOWN_HOSTS }}" | tr -d '\r' > ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
+          # Falen we hier, dan is de DEPLOY_SSH_KEY secret zelf corrupt — re-paste.
+          if ! ssh-keygen -y -f ~/.ssh/id_ed25519 >/dev/null 2>&1; then
+            echo "::error::DEPLOY_SSH_KEY secret is geen geldige private key. Re-paste vanuit je password manager (let op: hele blok inclusief BEGIN/END regels en trailing newline)."
+            exit 1
+          fi
 
       - name: Deploy (fast-forward pull + PHP lint)
         env:
