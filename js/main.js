@@ -193,4 +193,16 @@ document.addEventListener('DOMContentLoaded', function () {
     initSlider(container);
   });
 
+  // --- Telefoon-klik tracking ---
+  // Delegated, zodat dynamisch toegevoegde tel: links ook getracked worden.
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!link) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'telefoon_klik',
+      'phone_number': link.getAttribute('href').replace(/^tel:/, '')
+    });
+  });
+
 });
