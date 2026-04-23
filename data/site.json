@@ -21,7 +21,7 @@
     },
     "brand": {
         "logo": "/rwwbouw-logo.png",
-        "favicon": "",
+        "favicon": "/rwwbouw-logo.png",
         "color_primary": "#991B1B",
         "color_secondary": "#B91C1C",
         "color_dark": "#1C1917",

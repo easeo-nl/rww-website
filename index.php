@@ -63,7 +63,7 @@ require_once __DIR__ . '/includes/header.php';
           ['titel' => 'Complete woningrenovatie', 'tekst' => 'Badkamer, keuken, vloer, zolder, schilderwerk — alles in één keer, door één team.', 'img' => '/images/uploads/185.jpg', 'alt' => 'Complete woningrenovatie', 'link' => 'diensten.php#nieuwbouw'],
           ['titel' => 'Stucwerk en afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => '/images/uploads/177.jpg', 'alt' => 'Stucwerk', 'link' => 'diensten.php#stucwerk'],
           ['titel' => 'Vloeren en tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => '/images/uploads/20180410_104638.jpg', 'alt' => 'Vloerverwarming', 'link' => 'diensten.php#vloeren'],
-          ['titel' => 'Interieurontwerp en visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => '/images/uploads/20230329_151317.jpg', 'alt' => 'Interieurontwerp', 'link' => 'diensten.php#interieur'],
+          ['titel' => 'Interieurontwerp en visualisatie', 'tekst' => 'Agnieszka ontwerpt uw ruimte en maakt 3D-visualisaties. U ziet het resultaat voordat we beginnen.', 'img' => '/images/uploads/tekeningen/PHOTO-2026-04-09-08-37-35 6.jpg', 'alt' => 'Interieurontwerp', 'link' => 'diensten.php#interieur'],
         ];
         foreach ($diensten as $d): ?>
         <div class="project-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">

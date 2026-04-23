@@ -4,7 +4,7 @@
  * Uses localStorage key: easeo_cookies
  */
 ?>
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-dark text-white p-4 z-[9999] shadow-lg transform translate-y-full transition-transform duration-300" style="display:none;">
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 text-white p-4 z-[9999] shadow-lg transform translate-y-full transition-transform duration-300" style="display:none; background-color:#1C1917;">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="text-sm flex-1">
             Wij gebruiken cookies om uw ervaring te verbeteren. Door deze site te gebruiken gaat u akkoord met ons
@@ -14,7 +14,7 @@
             <button onclick="easeoDeclineCookies()" class="px-4 py-2 text-sm border border-gray-500 rounded hover:bg-gray-700 transition-colors">
                 Weigeren
             </button>
-            <button onclick="easeoAcceptCookies()" class="px-4 py-2 text-sm bg-primary text-white rounded hover:opacity-90 transition-colors">
+            <button onclick="easeoAcceptCookies()" class="px-4 py-2 text-sm bg-primary text-white border border-primary rounded hover:opacity-90 transition-colors">
                 Accepteren
             </button>
         </div>
