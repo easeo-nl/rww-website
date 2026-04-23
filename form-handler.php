@@ -114,5 +114,14 @@ $_SESSION['csrf_frontend'] = bin2hex(random_bytes(32));
 
 // Success message
 $_SESSION['form_success'] = $form['bevestiging'] ?? 'Bedankt voor uw bericht.';
+
+// Bewaar context voor dataLayer push op de vervolgpagina.
+// `form_type` pakt het geselecteerde projecttype uit het NL- of PL-formulier.
+$_SESSION['form_success_data'] = [
+    'form_id' => $formId,
+    'form_name' => $form['naam'] ?? $formId,
+    'form_type' => $data['type_project'] ?? $data['rodzaj_projektu'] ?? '',
+];
+
 header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '/'));
 exit;
