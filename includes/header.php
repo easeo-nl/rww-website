@@ -96,6 +96,7 @@ $is_polski = ($html_lang === 'pl');
           <a href="index.php#projecten" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Projecten</a>
           <a href="index.php#reviews" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Reviews</a>
           <a href="/over-ons.php" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Over ons</a>
+          <a href="/contact.php" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Contact</a>
           <a href="/polski.php" class="text-stone-400 hover:text-white transition-colors text-xs font-medium border border-stone-700 px-2.5 py-1 rounded">PL</a>
           <a href="/offerte.php" class="bg-rww-red hover:bg-rww-red-light text-white px-5 py-2.5 rounded text-sm font-semibold transition-colors">Offerte aanvragen</a>
         </nav>
@@ -137,6 +138,7 @@ $is_polski = ($html_lang === 'pl');
         <a href="index.php#projecten" class="text-stone-300 hover:text-white text-lg py-2">Projecten</a>
         <a href="index.php#reviews" class="text-stone-300 hover:text-white text-lg py-2">Reviews</a>
         <a href="/over-ons.php" class="text-stone-300 hover:text-white text-lg py-2">Over ons</a>
+        <a href="/contact.php" class="text-stone-300 hover:text-white text-lg py-2">Contact</a>
         <a href="/polski.php" class="text-stone-400 hover:text-white text-sm py-2 border-t border-stone-800 mt-2 pt-4">Strona polska &rarr;</a>
         <a href="/offerte.php" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Offerte aanvragen</a>
         <?php endif; ?>

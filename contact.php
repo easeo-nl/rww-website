@@ -1,78 +1,69 @@
 <?php
-/**
- * EASEO CMS — Contact page with dynamic form
- */
 require_once __DIR__ . '/includes/content.php';
 require_once __DIR__ . '/includes/form-engine.php';
-check_setup();
 
-$contactData = page_content('contact');
-$pageTitle = ($contactData['meta_title'] ?? 'Contact') . ' | ' . site('company.name', 'EASEO');
-$metaDescription = $contactData['meta_description'] ?? '';
-$formId = $contactData['formulier_id'] ?? 'contact';
+$pageTitle       = 'Contact — RWW Bouw';
+$metaDescription = 'Neem contact op met RWW Bouw. Wij beantwoorden uw vragen zo snel mogelijk.';
+$htmlLang        = 'nl';
 
 require_once __DIR__ . '/includes/header.php';
 ?>
 
-<section class="py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Form -->
-            <div>
-                <h1 class="text-3xl font-display font-bold text-dark mb-4"><?= e($contactData['titel'] ?? 'Contact') ?></h1>
-                <?php if (!empty($contactData['intro_tekst'])): ?>
-                <p class="text-muted mb-6"><?= e($contactData['intro_tekst']) ?></p>
-                <?php endif; ?>
-
-                <?= render_form($formId) ?>
-            </div>
-
-            <!-- Contact info -->
-            <div>
-                <div class="bg-light rounded-lg p-8">
-                    <h2 class="text-xl font-display font-bold text-dark mb-6">Contactgegevens</h2>
-
-                    <div class="space-y-4">
-                        <?php if (site('company.address')): ?>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            <div>
-                                <p class="font-medium text-dark"><?= e(site('company.address')) ?></p>
-                                <p class="text-muted"><?= e(site('company.postcode')) ?> <?= e(site('company.city')) ?></p>
-                            </div>
-                        </div>
-                        <?php endif; ?>
-
-                        <?php if (site('company.email')): ?>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            <a href="mailto:<?= e(site('company.email')) ?>" class="text-primary hover:underline"><?= e(site('company.email')) ?></a>
-                        </div>
-                        <?php endif; ?>
-
-                        <?php if (site('company.phone')): ?>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            <a href="tel:<?= e(site('company.phone')) ?>" class="text-primary hover:underline"><?= e(site('company.phone')) ?></a>
-                        </div>
-                        <?php endif; ?>
-
-                        <?php if (site('company.kvk')): ?>
-                        <div class="flex items-center gap-3 text-sm text-muted">
-                            <span>KVK: <?= e(site('company.kvk')) ?></span>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-
-                <?php if (!empty($contactData['kaart_embed'])): ?>
-                <div class="mt-6 rounded-lg overflow-hidden">
-                    <?= $contactData['kaart_embed'] ?>
-                </div>
-                <?php endif; ?>
-            </div>
-        </div>
+  <!-- SECTION: contact-hero -->
+  <section class="pt-32 pb-16 bg-rww-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Contact</span>
+      <h1 class="font-display text-4xl sm:text-5xl text-rww-dark mt-4 mb-6 font-bold">
+        Stuur ons een bericht
+      </h1>
+      <p class="text-rww-muted text-lg leading-relaxed max-w-2xl mx-auto">
+        Heeft u een vraag of wilt u meer weten? Stuur ons een bericht en we nemen zo snel mogelijk contact met u op.
+      </p>
     </div>
-</section>
+  </section>
+  <!-- /SECTION: contact-hero -->
+
+  <!-- SECTION: contact -->
+  <section id="contact" class="py-20 md:py-28 bg-rww-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div class="fade-in">
+          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Bereikbaar</span>
+          <h2 class="font-display text-3xl sm:text-4xl text-white mt-4 mb-6 font-bold">
+            Neem direct contact op
+          </h2>
+          <p class="text-stone-400 text-lg leading-relaxed mb-8">Liever direct bellen of appen? We zijn ook telefonisch bereikbaar.</p>
+
+          <div class="space-y-6">
+            <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+              <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div><p class="font-semibold text-lg">Whatsapp</p><p class="text-stone-400">06 160 357 54</p></div>
+            </a>
+            <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+              <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div><p class="font-semibold text-lg">Bel Rafael</p><p class="text-stone-400">06 274 544 16</p></div>
+            </a>
+            <a href="mailto:<?= e(site('company.email')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+              <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div><p class="font-semibold text-lg">E-mail</p><p class="text-stone-400"><?= e(site('company.email')) ?></p></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <div class="bg-stone-900 rounded-lg p-6 sm:p-8">
+            <?= render_form('contact-simple') ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: contact -->
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
