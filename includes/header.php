@@ -97,7 +97,7 @@ $is_polski = ($html_lang === 'pl');
           <a href="#reviews" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Reviews</a>
           <a href="#over-ons" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Over ons</a>
           <a href="/polski.php" class="text-stone-400 hover:text-white transition-colors text-xs font-medium border border-stone-700 px-2.5 py-1 rounded">PL</a>
-          <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-5 py-2.5 rounded text-sm font-semibold transition-colors">Offerte aanvragen</a>
+          <a href="/offerte.php" class="bg-rww-red hover:bg-rww-red-light text-white px-5 py-2.5 rounded text-sm font-semibold transition-colors">Offerte aanvragen</a>
         </nav>
         <?php endif; ?>
 
@@ -138,7 +138,7 @@ $is_polski = ($html_lang === 'pl');
         <a href="#reviews" class="text-stone-300 hover:text-white text-lg py-2">Reviews</a>
         <a href="#over-ons" class="text-stone-300 hover:text-white text-lg py-2">Over ons</a>
         <a href="/polski.php" class="text-stone-400 hover:text-white text-sm py-2 border-t border-stone-800 mt-2 pt-4">Strona polska &rarr;</a>
-        <a href="#contact" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Offerte aanvragen</a>
+        <a href="/offerte.php" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Offerte aanvragen</a>
         <?php endif; ?>
         <a href="tel:<?= e(site('company.phone')) ?>" class="text-stone-300 hover:text-white text-center py-2 mt-2">
           <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
