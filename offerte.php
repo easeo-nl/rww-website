@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Offerte aanvragen</span>
       <h1 class="font-display text-4xl sm:text-5xl text-rww-dark mt-4 mb-6 font-bold">
-        Klaar voor een vrijblijvende inmeting?
+        Klaar voor een vrijblijvende Offerte?
       </h1>
       <p class="text-rww-muted text-lg leading-relaxed max-w-2xl mx-auto">
         Vertel ons over uw project. We komen langs voor een inmeting en sturen u een heldere, gedetailleerde offerte.
@@ -30,7 +30,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="fade-in">
           <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Contact</span>
           <h2 class="font-display text-3xl sm:text-4xl text-white mt-4 mb-6 font-bold">
-            Plan een inmeting
+            Vraag Offerte aan
           </h2>
           <p class="text-stone-400 text-lg leading-relaxed mb-8">Vertel ons over uw project. We nemen snel contact met u op voor een vrijblijvende inmeting en offerte.</p>
 
