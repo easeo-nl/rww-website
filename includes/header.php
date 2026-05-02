@@ -92,7 +92,24 @@ $is_polski = ($html_lang === 'pl');
         <?php else: ?>
         <nav class="hidden md:flex items-center gap-8">
           <a href="index.php#werkwijze" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Werkwijze</a>
-          <a href="/diensten.php" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Diensten</a>
+          <div class="relative group">
+            <a href="/diensten.php" class="text-stone-300 hover:text-white transition-colors text-sm font-medium flex items-center gap-1">
+              Diensten
+              <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 hidden group-hover:block">
+              <div class="bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 w-56">
+                <a href="/badkamer.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Badkamers op maat</a>
+                <a href="/keuken.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Keukens op maat</a>
+                <a href="/stucwerk.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Stucwerk en afwerking</a>
+                <a href="/vloeren.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Vloeren en tegelwerk</a>
+                <a href="/renovatie.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Complete woningrenovatie</a>
+                <a href="/interieur.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Interieurontwerp</a>
+                <div class="border-t border-stone-800 my-1"></div>
+                <a href="/diensten.php" class="block px-4 py-2 text-rww-red hover:text-rww-red-light text-sm font-medium transition-colors">Alle diensten →</a>
+              </div>
+            </div>
+          </div>
           <a href="index.php#projecten" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Projecten</a>
           <a href="index.php#reviews" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Reviews</a>
           <a href="/over-ons.php" class="text-stone-300 hover:text-white transition-colors text-sm font-medium">Over ons</a>
@@ -134,7 +151,17 @@ $is_polski = ($html_lang === 'pl');
         <a href="#kontakt" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Zapytaj o wycen&#281;</a>
         <?php else: ?>
         <a href="index.php#werkwijze" class="text-stone-300 hover:text-white text-lg py-2">Werkwijze</a>
-        <a href="/diensten.php" class="text-stone-300 hover:text-white text-lg py-2">Diensten</a>
+        <div>
+          <a href="/diensten.php" class="text-stone-300 hover:text-white text-lg py-2 block">Diensten</a>
+          <div class="pl-4 mt-1 space-y-1">
+            <a href="/badkamer.php" class="block text-stone-400 hover:text-white text-sm py-1">Badkamers op maat</a>
+            <a href="/keuken.php" class="block text-stone-400 hover:text-white text-sm py-1">Keukens op maat</a>
+            <a href="/stucwerk.php" class="block text-stone-400 hover:text-white text-sm py-1">Stucwerk en afwerking</a>
+            <a href="/vloeren.php" class="block text-stone-400 hover:text-white text-sm py-1">Vloeren en tegelwerk</a>
+            <a href="/renovatie.php" class="block text-stone-400 hover:text-white text-sm py-1">Complete woningrenovatie</a>
+            <a href="/interieur.php" class="block text-stone-400 hover:text-white text-sm py-1">Interieurontwerp</a>
+          </div>
+        </div>
         <a href="index.php#projecten" class="text-stone-300 hover:text-white text-lg py-2">Projecten</a>
         <a href="index.php#reviews" class="text-stone-300 hover:text-white text-lg py-2">Reviews</a>
         <a href="/over-ons.php" class="text-stone-300 hover:text-white text-lg py-2">Over ons</a>

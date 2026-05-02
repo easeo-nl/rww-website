@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_post'])) {
             'inhoud' => $_POST['inhoud'] ?? '',
             'afbeelding' => sanitize_input($_POST['afbeelding'] ?? ''),
             'categorie' => sanitize_input($_POST['categorie'] ?? ''),
+            'groep' => sanitize_input($_POST['groep'] ?? ''),
             'tags' => sanitize_input($_POST['tags'] ?? ''),
             'auteur' => sanitize_input($_POST['auteur'] ?? ''),
             'status' => sanitize_input($_POST['status'] ?? 'concept'),
@@ -135,6 +136,19 @@ $categories = get_categories();
                         <option value="<?= e($cat) ?>">
                         <?php endforeach; ?>
                     </datalist>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-300 mb-1">Groep (dienst) <span class="help-tooltip" data-help="Kies de dienst waarbij dit project hoort. De foto verschijnt dan in de gallerij op die dienstpagina.">?</span></label>
+                    <select name="groep" class="admin-input w-full">
+                        <option value="" <?= empty($post['groep']) ? 'selected' : '' ?>>— Geen / algemeen —</option>
+                        <option value="badkamer"  <?= ($post['groep'] ?? '') === 'badkamer'  ? 'selected' : '' ?>>Badkamer</option>
+                        <option value="keuken"    <?= ($post['groep'] ?? '') === 'keuken'    ? 'selected' : '' ?>>Keuken</option>
+                        <option value="stucwerk"  <?= ($post['groep'] ?? '') === 'stucwerk'  ? 'selected' : '' ?>>Stucwerk</option>
+                        <option value="vloeren"   <?= ($post['groep'] ?? '') === 'vloeren'   ? 'selected' : '' ?>>Vloeren</option>
+                        <option value="renovatie" <?= ($post['groep'] ?? '') === 'renovatie' ? 'selected' : '' ?>>Complete woningrenovatie</option>
+                        <option value="interieur" <?= ($post['groep'] ?? '') === 'interieur' ? 'selected' : '' ?>>Interieurontwerp</option>
+                    </select>
                 </div>
 
                 <div class="mb-4">

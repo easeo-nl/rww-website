@@ -202,15 +202,19 @@ require_once __DIR__ . '/includes/header.php';
           <div class="slider-track" data-slider-track>
             <?php foreach ($keuken_fotos as $project): ?>
             <div class="slider-slide">
+              <?php $hasLink = !empty($project['slug']); ?>
+              <?= $hasLink ? '<a href="/blog-post.php?slug=' . e($project['slug']) . '" class="block">' : '<div>' ?>
               <div class="project-card group relative rounded-lg overflow-hidden aspect-[4/3]">
                 <img src="<?= e($project['afbeelding'] ?? '') ?>" alt="<?= e($project['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div class="absolute bottom-0 left-0 right-0 p-5">
                     <h4 class="text-white font-display text-lg font-semibold"><?= e($project['titel'] ?? '') ?></h4>
                     <p class="text-stone-300 text-sm"><?= e($project['samenvatting'] ?? '') ?></p>
+                    <?php if ($hasLink): ?><span class="text-rww-red text-sm font-semibold mt-1 inline-block">Lees meer →</span><?php endif; ?>
                   </div>
                 </div>
               </div>
+              <?= $hasLink ? '</a>' : '</div>' ?>
             </div>
             <?php endforeach; ?>
           </div>

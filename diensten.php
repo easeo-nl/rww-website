@@ -274,7 +274,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/renovatie.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
       </div>
     </div>
@@ -298,7 +301,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/stucwerk.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['stucwerk'] ?? []; ?>
@@ -372,7 +378,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/vloeren.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
       </div>
     </div>
@@ -408,7 +417,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Afspraak plannen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/interieur.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Afspraak plannen</a>
+          </div>
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['interieur'] ?? []; ?>

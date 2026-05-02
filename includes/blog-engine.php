@@ -61,6 +61,7 @@ function create_post(array $data): array {
         'inhoud' => $data['inhoud'] ?? '',
         'afbeelding' => $data['afbeelding'] ?? '',
         'categorie' => trim($data['categorie'] ?? ''),
+        'groep' => trim($data['groep'] ?? ''),
         'tags' => $data['tags'] ?? '',
         'auteur' => $data['auteur'] ?? ($_SESSION['easeo_admin']['naam'] ?? ''),
         'status' => in_array($data['status'] ?? '', ['gepubliceerd', 'concept']) ? $data['status'] : 'concept',
@@ -87,7 +88,7 @@ function update_post(string $id, array $data): bool {
                 }
             }
 
-            foreach (['titel', 'samenvatting', 'inhoud', 'afbeelding', 'categorie', 'tags', 'auteur', 'status', 'datum', 'meta_title', 'meta_description'] as $field) {
+            foreach (['titel', 'samenvatting', 'inhoud', 'afbeelding', 'categorie', 'groep', 'tags', 'auteur', 'status', 'datum', 'meta_title', 'meta_description'] as $field) {
                 if (isset($data[$field])) {
                     $post[$field] = is_string($data[$field]) ? trim($data[$field]) : $data[$field];
                 }

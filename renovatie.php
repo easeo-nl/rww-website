@@ -3,8 +3,8 @@ require_once __DIR__ . '/includes/content.php';
 require_once __DIR__ . '/includes/blog-engine.php';
 require_once __DIR__ . '/includes/form-engine.php';
 
-$pageTitle = page_content('badkamer', 'seo_title', 'Badkamerrenovatie op maat — RWW Bouw');
-$metaDescription = page_content('badkamer', 'seo_description', 'Complete badkamerrenovatie in Amersfoort en omgeving. Tegelwerk, sanitair, beton ciré. Eerst tekenen, dan bouwen.');
+$pageTitle = page_content('renovatie', 'seo_title', 'Complete woningrenovatie — RWW Bouw');
+$metaDescription = page_content('renovatie', 'seo_description', 'Complete woningrenovatie in Amersfoort en omgeving. Badkamer, keuken, vloer en schilderwerk door één team. RWW Bouw.');
 $htmlLang = 'nl';
 
 require_once __DIR__ . '/includes/header.php';
@@ -14,17 +14,17 @@ require_once __DIR__ . '/includes/header.php';
   <!-- SECTION: hero -->
   <section id="hero" class="relative min-h-screen flex items-center">
     <div class="absolute inset-0">
-      <img src="<?= e(page_content('badkamer', 'hero_image', '/images/uploads/20230329_151355.jpg')) ?>" alt="Badkamerrenovatie door RWW Bouw" class="w-full h-full object-cover">
+      <img src="<?= e(page_content('renovatie', 'hero_image', '/images/uploads/185.jpg')) ?>" alt="Complete woningrenovatie door RWW Bouw" class="w-full h-full object-cover">
       <div class="hero-overlay absolute inset-0"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
       <div class="max-w-2xl">
-        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Badkamerrenovatie</span>
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Complete woningrenovatie</span>
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mt-4 mb-6">
-          <?= page_content('badkamer', 'hero_titel', 'Badkamer op maat —<br>van tekening tot tegels') ?>
+          <?= page_content('renovatie', 'hero_titel', 'Alles in één keer —<br>door één team') ?>
         </h1>
         <p class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
-          <?= e(page_content('badkamer', 'hero_subtitel', 'Agnieszka tekent uw badkamer op maat. Raphaël en zijn team bouwen hem precies zoals gepland. Tegelwerk, sanitair, beton ciré — alles door één team.')) ?>
+          <?= e(page_content('renovatie', 'hero_subtitel', 'Badkamer, keuken, vloer, zolder — alles tegelijk, door hetzelfde team. Geen losse aannemers, geen gedoe met coördinatie. Wij regelen het van A tot oplevering.')) ?>
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors text-center">
@@ -44,37 +44,37 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <!-- /SECTION: hero -->
 
-    <!-- SECTION: diensten -->
+  <!-- SECTION: diensten -->
   <section id="diensten" class="py-20 md:py-28 bg-rww-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Wat wij doen</span>
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
-          Complete badkamerrenovatie
+          Complete woningrenovatie
         </h2>
-        <p class="text-rww-muted text-lg">Eén team voor het hele traject — van sloopwerk en leidingwerk tot tegels en de laatste afwerking.</p>
+        <p class="text-rww-muted text-lg">Één aannemer voor de hele verbouwing. Dat scheelt tijd, geld en frustratie.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
         <?php
         $diensten = [
           [
-            'titel' => 'Tegelwerk op maat',
-            'tekst' => 'Vloer- en wandtegels in elk formaat, inclusief patroonvloeren en voegwerk. Strak gelegd, netjes afgewerkt.',
-            'img'   => '/images/uploads/20230329_151357.jpg',
-            'alt'   => 'Tegelwerk badkamer',
-          ],
-          [
-            'titel' => 'Sanitair plaatsen',
-            'tekst' => 'Inloopdouche, bad, toilet, wastafel — inclusief al het leidingwerk. Alles door één team, geen losse onderaannemers.',
+            'titel' => 'Badkamer én keuken combinatie',
+            'tekst' => 'Beide ruimtes tegelijk verbouwen is efficiënter en goedkoper. Leidingwerk wordt één keer opengebroken, één team doet alles.',
             'img'   => '/images/uploads/20230329_151355.jpg',
-            'alt'   => 'Sanitair badkamer',
+            'alt'   => 'Badkamer en keuken renovatie',
           ],
           [
-            'titel' => 'Beton ciré en microbeton',
-            'tekst' => 'Betonlook-afwerking op wanden en vloer. Naadloos, waterdicht en super strak. Agnieszka adviseert over kleur en textuur.',
-            'img'   => '/images/uploads/IMG-20230330-WA0002.jpg',
-            'alt'   => 'Beton ciré badkamer',
+            'titel' => 'Elektra en leidingwerk',
+            'tekst' => 'Verouderd leidingwerk vernieuwen, extra groepen toevoegen of elektra verplaatsen — inclusief alle bijkomende stucwerk en herstelwerk.',
+            'img'   => '/images/uploads/170.jpg',
+            'alt'   => 'Elektra en leidingwerk renovatie',
+          ],
+          [
+            'titel' => 'Van slopen tot oplevering',
+            'tekst' => 'Sloopwerk, leidingen, stucwerk, schilderwerk, vloeren — alles in de juiste volgorde door één team. U hoeft niets te coördineren.',
+            'img'   => '/images/uploads/185.jpg',
+            'alt'   => 'Complete renovatie oplevering',
           ],
         ];
         foreach ($diensten as $d): ?>
@@ -93,7 +93,6 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <!-- /SECTION: diensten -->
 
-
   <!-- SECTION: werkwijze -->
   <section id="werkwijze" class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,52 +104,51 @@ require_once __DIR__ . '/includes/header.php';
       </div>
 
       <div class="werkwijze-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
-
         <?php
         $stappen = [
           [
             'nr'    => '1',
             'img'   => '/images/uploads/177.jpg',
-            'titel' => 'Kennismaking en Wensen',
+            'titel' => 'Intake en plan',
             'items' => [
-              'We bespreken jouw wensen, stijl en budget',
-              'WWe bekijken de ruimte en technische mogelijkheden',
-              'JJe deelt inspiratie (modern, hotelstijl, minimalistisch…',
+              'We bespreken alle wensen voor de verbouwing',
+              'Agnieszka maakt een plattegrond en visualisatie',
+              'We stellen een duidelijke planning op',
             ],
-            'cta'   => '👉 De basis voor jouw perfecte badkamer wordt gelegd',
+            'cta'   => 'U weet precies wat wanneer gebeurt',
           ],
           [
             'nr'    => '2',
             'img'   => '/images/uploads/172.jpg',
-            'titel' => 'Ontwerp en Visualisatie',
+            'titel' => 'Sloopwerk',
             'items' => [
-              'We maken een persoonlijk badkamerontwerp',
-              'Je ziet jouw badkamer in een realistische 3D weergave',
-              'Materialen, tegels en indeling worden gekozen',
+              'Alle te slopen onderdelen worden verwijderd',
+              'Bouwafval wordt afgevoerd',
+              'Leidingen en elektra worden aangepast',
             ],
-            'cta'   => '👉 Je weet vooraf precies hoe het eruit komt te zien',
+            'cta'   => 'Schone lei voor de nieuwe situatie',
           ],
           [
             'nr'    => '3',
             'img'   => '/images/uploads/170.jpg',
-            'titel' => 'Voorbereiding en Renovatie',
+            'titel' => 'Uitvoering',
             'items' => [
-              'Oude badkamer wordt verwijderd',
-              'Leidingen, afvoer en elektra worden aangepast',
-              'Alles wordt voorbereid voor plaatsing',
+              'Alle werkzaamheden in de juiste volgorde',
+              'Metsel-, tegel-, stuc- en schilderwerk',
+              'Sanitair, keuken en afwerking plaatsen',
             ],
-            'cta'   => '👉 Dit is de belangrijkste fase voor een perfect eindresultaat',
+            'cta'   => 'Eén team, één aanspreekpunt',
           ],
           [
             'nr'    => '4',
             'img'   => '/images/uploads/108.jpg',
-            'titel' => 'Installatie en Oplevering',
+            'titel' => 'Oplevering',
             'items' => [
-              'Nieuwe badkamer wordt geplaatst en afgewerkt',
-              'Tegels, sanitair en details worden gemonteerd',
-              'Alles wordt netjes opgeleverd',
+              'Eindcontrole op alle onderdelen',
+              'Ruimte wordt schoon opgeleverd',
+              'Nazorg en garantie op het uitgevoerde werk',
             ],
-            'cta'   => 'Binnen korte tijd geniet je van jouw nieuwe badkamer',
+            'cta'   => 'Klaar om van te genieten',
           ],
         ];
         foreach ($stappen as $stap): ?>
@@ -173,33 +171,31 @@ require_once __DIR__ . '/includes/header.php';
           <p class="text-rww-dark text-sm font-medium italic">👉 <?= e($stap['cta']) ?></p>
         </div>
         <?php endforeach; ?>
-
       </div>
     </div>
   </section>
   <!-- /SECTION: werkwijze -->
 
-
   <!-- SECTION: projecten -->
   <?php
-  $badkamer_fotos = array_filter(
+  $renovatie_fotos = array_filter(
       get_published_posts(),
-      fn($p) => ($p['categorie'] ?? '') === 'projecten' && ($p['groep'] ?? '') === 'badkamer'
+      fn($p) => ($p['categorie'] ?? '') === 'projecten' && ($p['groep'] ?? '') === 'renovatie'
   );
-  usort($badkamer_fotos, fn($a, $b) => strcmp($b['datum'] ?? '', $a['datum'] ?? ''));
-  $badkamer_fotos = array_values($badkamer_fotos);
+  usort($renovatie_fotos, fn($a, $b) => strcmp($b['datum'] ?? '', $a['datum'] ?? ''));
+  $renovatie_fotos = array_values($renovatie_fotos);
   ?>
-  <?php if (!empty($badkamer_fotos)): ?>
+  <?php if (!empty($renovatie_fotos)): ?>
   <section class="py-20 md:py-28 bg-rww-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Ons werk</span>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-4 mb-6 font-bold">Onze badkamers</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-4 mb-6 font-bold">Onze renovatieprojecten</h2>
       </div>
       <div class="fade-in">
         <div class="slider-container" data-slider>
           <div class="slider-track" data-slider-track>
-            <?php foreach ($badkamer_fotos as $project): ?>
+            <?php foreach ($renovatie_fotos as $project): ?>
             <div class="slider-slide">
               <?php $hasLink = !empty($project['slug']); ?>
               <?= $hasLink ? '<a href="/blog-post.php?slug=' . e($project['slug']) . '" class="block">' : '<div>' ?>
@@ -217,7 +213,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
             <?php endforeach; ?>
           </div>
-          <?php if (count($badkamer_fotos) > 1): ?>
+          <?php if (count($renovatie_fotos) > 1): ?>
           <div class="slider-controls flex items-center justify-center gap-4 mt-6">
             <button class="slider-btn-prev" aria-label="Vorige">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -235,18 +231,16 @@ require_once __DIR__ . '/includes/header.php';
   <?php endif; ?>
   <!-- /SECTION: projecten -->
 
-
-   <!-- SECTION: reviews -->
-    <section>
+  <!-- SECTION: reviews -->
+  <section>
     <div>
       <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
         <script defer async src='https://cdn.trustindex.io/loader.js?08389c960054733e4b062cdded1'></script>
       </div>
     </div>
-   </section>
+  </section>
   <!-- /SECTION: reviews -->
-
 
   <!-- SECTION: contact -->
   <section id="contact" class="py-20 md:py-28 bg-rww-dark">
@@ -255,16 +249,16 @@ require_once __DIR__ . '/includes/header.php';
         <div class="fade-in">
           <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Contact</span>
           <h2 class="font-display text-3xl sm:text-4xl text-white mt-4 mb-6 font-bold">
-            Plan een inmeting voor uw badkamer
+            Vrijblijvende offerte voor uw verbouwing
           </h2>
-          <p class="text-stone-400 text-lg leading-relaxed mb-8">Vertel ons over uw badkamer. We nemen snel contact met u op voor een vrijblijvende inmeting en offerte.</p>
+          <p class="text-stone-400 text-lg leading-relaxed mb-8">Vertel ons over uw plannen. We nemen snel contact op voor een bezichtiging en plan op maat.</p>
 
           <div class="space-y-6">
-            <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+            <a href="tel:0616035754" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
               <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
                 <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
-              <div><p class="font-semibold text-lg">Whatsapp</p><p class="text-stone-400">06 160 357 54</p></div>
+              <div><p class="font-semibold text-lg">WhatsApp</p><p class="text-stone-400">06 160 357 54</p></div>
             </a>
             <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
               <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
