@@ -53,6 +53,16 @@ if ($tab === 'login') {
 // All other tabs require login
 require_login();
 
+// JSON API requests must be handled before layout-top.php outputs HTML
+if (isset($_GET['format']) && $_GET['format'] === 'json') {
+    if ($tab === 'media' && ($_GET['action'] ?? '') === 'list') {
+        require_once EASEO_ROOT . '/includes/media-engine.php';
+        header('Content-Type: application/json');
+        echo json_encode(['files' => get_media()]);
+        exit;
+    }
+}
+
 // Route to pages
 $allowedTabs = [
     'dashboard', 'content', 'paginas', 'blog', 'blog-edit', 'media',
