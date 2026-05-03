@@ -61,9 +61,11 @@ require_once __DIR__ . '/includes/header.php';
         <p class="text-rww-muted text-lg leading-relaxed">Geen gedoe met losse aannemers. Raphaël coördineert het hele traject — van eerste tekening tot sleuteloverdracht.</p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 fade-in">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-9 gap-4 fade-in">
         <?php
         $overzicht = [
+          ['anchor' => '#badkamer',            'label' => 'Badkamers',                       'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>'],
+          ['anchor' => '#keuken',              'label' => 'Keukens',                          'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>'],
           ['anchor' => '#nieuwbouw',           'label' => 'Nieuwbouw',                       'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>'],
           ['anchor' => '#afbouw',              'label' => 'Afbouw',                           'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>'],
           ['anchor' => '#renovatie',           'label' => 'Renovatie',                        'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>'],
@@ -86,6 +88,110 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: diensten-overzicht -->
 
 
+  <!-- SECTION: badkamer -->
+  <section id="badkamer" class="py-20 md:py-28 bg-rww-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="fade-in">
+          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Badkamers</span>
+          <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-6 font-bold">Van sloopwerk tot sleuteloverdracht</h2>
+          <p class="text-rww-muted text-lg leading-relaxed mb-6">Wij renoveren badkamers van begin tot eind. Agnieszka ontwerpt de indeling en kiest de materialen, Raphaël voert het uit. Tegelwerk, sanitair, doucheput en vloerverwarming — alles door één team.</p>
+          <ul class="space-y-3 mb-8">
+            <?php foreach (['Tegelwerk en sanitair op maat', 'Inloopdouche of ligbad', 'Elektrische vloerverwarming', 'Sloopwerk tot nette oplevering'] as $punt): ?>
+            <li class="flex items-start gap-3 text-rww-text">
+              <svg class="w-5 h-5 text-rww-red shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <?= e($punt) ?>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/badkamer.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
+        </div>
+        <div class="fade-in">
+          <?php $fotos = array_values(array_filter(get_published_posts(), fn($p) => ($p['groep'] ?? '') === 'badkamer' && !empty($p['afbeelding']))); ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding']) ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/20230329_151355.jpg" alt="Badkamerrenovatie door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: badkamer -->
+
+
+  <!-- SECTION: keuken -->
+  <section id="keuken" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="fade-in order-2 lg:order-1">
+          <?php $fotos = array_values(array_filter(get_published_posts(), fn($p) => ($p['groep'] ?? '') === 'keuken' && !empty($p['afbeelding']))); ?>
+          <div class="aspect-[4/3] rounded-lg shadow-lg relative" data-slider data-slider-per-view="1">
+            <div class="slider-container absolute inset-0 overflow-hidden rounded-lg">
+              <div class="slider-track h-full" data-slider-track>
+                <?php if (!empty($fotos)): foreach ($fotos as $foto): ?>
+                <div class="slider-slide h-full">
+                  <img src="<?= e($foto['afbeelding']) ?>" alt="<?= e($foto['titel'] ?? '') ?>" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endforeach; else: ?>
+                <div class="slider-slide h-full">
+                  <img src="/images/uploads/Keuken/PHOTO-2026-04-09-09-05-19 3.jpg" alt="Keukenrenovatie door RWW Bouw" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (count($fotos) > 1): ?>
+            <div class="slider-controls absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-10">
+              <button class="slider-btn-prev" aria-label="Vorige"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+              <div class="slider-dots" data-slider-dots></div>
+              <button class="slider-btn-next" aria-label="Volgende"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <?php endif; ?>
+          </div>
+        </div>
+        <div class="fade-in order-1 lg:order-2">
+          <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Keukens</span>
+          <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-6 font-bold">Keukens die werken en er goed uitzien</h2>
+          <p class="text-rww-muted text-lg leading-relaxed mb-6">Een nieuwe keuken begint bij een goed plan. Wij plaatsen keukens op maat — van het ontwerp tot de aansluitingen. Strakke afwerking, tegelwerk en een werkblad dat past bij uw woning.</p>
+          <ul class="space-y-3 mb-8">
+            <?php foreach (['Keukenplaatsing en maatwerk', 'Tegelwerk en wandafwerking', 'Werkblad, wasbak en kraan', 'Aansluitingen gas, water en elektra'] as $punt): ?>
+            <li class="flex items-start gap-3 text-rww-text">
+              <svg class="w-5 h-5 text-rww-red shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <?= e($punt) ?>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/keuken.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: keuken -->
+
+
   <!-- SECTION: nieuwbouw -->
   <section id="nieuwbouw" class="py-20 md:py-28 bg-rww-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,7 +208,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/nieuwbouw.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['nieuwbouw'] ?? []; ?>
@@ -176,7 +285,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/afbouw.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
       </div>
     </div>
@@ -200,7 +312,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/renovatie.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['renovatie'] ?? []; ?>
@@ -274,7 +389,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/renovatie.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
       </div>
     </div>
@@ -298,7 +416,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/stucwerk.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['stucwerk'] ?? []; ?>
@@ -372,7 +493,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/vloeren.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Offerte aanvragen</a>
+          </div>
         </div>
       </div>
     </div>
@@ -408,7 +532,10 @@ require_once __DIR__ . '/includes/header.php';
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="#contact" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Afspraak plannen</a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/interieur.php" class="inline-block bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Meer informatie</a>
+            <a href="#contact" class="inline-block border-2 border-rww-red text-rww-red hover:bg-rww-red hover:text-white px-8 py-4 rounded text-lg font-semibold transition-colors">Afspraak plannen</a>
+          </div>
         </div>
         <div class="fade-in">
           <?php $fotos = $diensten_fotos['interieur'] ?? []; ?>
