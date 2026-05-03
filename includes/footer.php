@@ -41,6 +41,8 @@ $is_polski = ($htmlLang ?? 'nl') === 'pl';
             <li><a href="/stucwerk.php" class="hover:text-stone-300 transition-colors">Stucwerk en afwerking</a></li>
             <li><a href="/vloeren.php" class="hover:text-stone-300 transition-colors">Vloeren en tegelwerk</a></li>
             <li><a href="/interieur.php" class="hover:text-stone-300 transition-colors">Interieurontwerp</a></li>
+            <li><a href="/nieuwbouw.php" class="hover:text-stone-300 transition-colors">Nieuwbouw</a></li>
+            <li><a href="/afbouw.php" class="hover:text-stone-300 transition-colors">Afbouw</a></li>
             <?php endif; ?>
           </ul>
         </div>

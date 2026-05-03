@@ -105,6 +105,8 @@ $is_polski = ($html_lang === 'pl');
                 <a href="/vloeren.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Vloeren en tegelwerk</a>
                 <a href="/renovatie.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Complete woningrenovatie</a>
                 <a href="/interieur.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Interieurontwerp</a>
+                <a href="/nieuwbouw.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Nieuwbouw</a>
+                <a href="/afbouw.php" class="block px-4 py-2 text-stone-300 hover:text-white hover:bg-stone-800 text-sm transition-colors">Afbouw</a>
                 <div class="border-t border-stone-800 my-1"></div>
                 <a href="/diensten.php" class="block px-4 py-2 text-rww-red hover:text-rww-red-light text-sm font-medium transition-colors">Alle diensten →</a>
               </div>
@@ -127,53 +129,55 @@ $is_polski = ($html_lang === 'pl');
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="menu-overlay" class="mobile-menu-overlay fixed inset-0 z-40 md:hidden hidden"></div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-72 bg-rww-dark z-50 shadow-2xl md:hidden">
-      <div class="flex items-center justify-between p-4 border-b border-stone-800">
-        <span class="text-white font-display text-lg">Menu</span>
-        <button id="menu-close" class="text-white p-2" aria-label="Menu sluiten">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-      <nav class="flex flex-col p-6 gap-4">
-        <?php if ($is_polski): ?>
-        <a href="#uslugi" class="text-stone-300 hover:text-white text-lg py-2">Us&#322;ugi</a>
-        <a href="#realizacje" class="text-stone-300 hover:text-white text-lg py-2">Realizacje</a>
-        <a href="#opinie" class="text-stone-300 hover:text-white text-lg py-2">Opinie</a>
-        <a href="#kontakt" class="text-stone-300 hover:text-white text-lg py-2">Kontakt</a>
-        <a href="/" class="text-stone-400 hover:text-white text-sm py-2 border-t border-stone-800 mt-2 pt-4">Strona w j&#281;zyku niderlandzkim &rarr;</a>
-        <a href="#kontakt" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Zapytaj o wycen&#281;</a>
-        <?php else: ?>
-        <a href="index.php#werkwijze" class="text-stone-300 hover:text-white text-lg py-2">Werkwijze</a>
-        <div>
-          <a href="/diensten.php" class="text-stone-300 hover:text-white text-lg py-2 block">Diensten</a>
-          <div class="pl-4 mt-1 space-y-1">
-            <a href="/badkamer.php" class="block text-stone-400 hover:text-white text-sm py-1">Badkamers op maat</a>
-            <a href="/keuken.php" class="block text-stone-400 hover:text-white text-sm py-1">Keukens op maat</a>
-            <a href="/stucwerk.php" class="block text-stone-400 hover:text-white text-sm py-1">Stucwerk en afwerking</a>
-            <a href="/vloeren.php" class="block text-stone-400 hover:text-white text-sm py-1">Vloeren en tegelwerk</a>
-            <a href="/renovatie.php" class="block text-stone-400 hover:text-white text-sm py-1">Complete woningrenovatie</a>
-            <a href="/interieur.php" class="block text-stone-400 hover:text-white text-sm py-1">Interieurontwerp</a>
-          </div>
-        </div>
-        <a href="index.php#projecten" class="text-stone-300 hover:text-white text-lg py-2">Projecten</a>
-        <a href="index.php#reviews" class="text-stone-300 hover:text-white text-lg py-2">Reviews</a>
-        <a href="/over-ons.php" class="text-stone-300 hover:text-white text-lg py-2">Over ons</a>
-        <a href="/contact.php" class="text-stone-300 hover:text-white text-lg py-2">Contact</a>
-        <a href="/polski.php" class="text-stone-400 hover:text-white text-sm py-2 border-t border-stone-800 mt-2 pt-4">Strona polska &rarr;</a>
-        <a href="/offerte.php" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Offerte aanvragen</a>
-        <?php endif; ?>
-        <a href="tel:<?= e(site('company.phone')) ?>" class="text-stone-300 hover:text-white text-center py-2 mt-2">
-          <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          06 274 544 16
-        </a>
-      </nav>
-    </div>
   </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="menu-overlay" class="mobile-menu-overlay fixed inset-0 z-40 md:hidden hidden"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-72 z-50 shadow-2xl md:hidden">
+    <div class="flex items-center justify-between p-4 border-b border-stone-800">
+      <span class="text-white font-display text-lg">Menu</span>
+      <button id="menu-close" class="text-white p-2" aria-label="Menu sluiten">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col p-6 gap-4">
+      <?php if ($is_polski): ?>
+      <a href="#uslugi" class="text-stone-300 hover:text-white text-lg py-2">Us&#322;ugi</a>
+      <a href="#realizacje" class="text-stone-300 hover:text-white text-lg py-2">Realizacje</a>
+      <a href="#opinie" class="text-stone-300 hover:text-white text-lg py-2">Opinie</a>
+      <a href="#kontakt" class="text-stone-300 hover:text-white text-lg py-2">Kontakt</a>
+      <a href="/" class="text-stone-400 hover:text-white text-sm py-2 border-t border-stone-800 mt-2 pt-4">Strona w j&#281;zyku niderlandzkim &rarr;</a>
+      <a href="#kontakt" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Zapytaj o wycen&#281;</a>
+      <?php else: ?>
+      <a href="index.php#werkwijze" class="text-stone-300 hover:text-white text-lg py-2">Werkwijze</a>
+      <div>
+        <a href="/diensten.php" class="text-stone-300 hover:text-white text-lg py-2 block">Diensten</a>
+        <div class="pl-4 mt-1 space-y-1">
+          <a href="/badkamer.php" class="block text-stone-400 hover:text-white text-sm py-1">Badkamers op maat</a>
+          <a href="/keuken.php" class="block text-stone-400 hover:text-white text-sm py-1">Keukens op maat</a>
+          <a href="/stucwerk.php" class="block text-stone-400 hover:text-white text-sm py-1">Stucwerk en afwerking</a>
+          <a href="/vloeren.php" class="block text-stone-400 hover:text-white text-sm py-1">Vloeren en tegelwerk</a>
+          <a href="/renovatie.php" class="block text-stone-400 hover:text-white text-sm py-1">Complete woningrenovatie</a>
+          <a href="/interieur.php" class="block text-stone-400 hover:text-white text-sm py-1">Interieurontwerp</a>
+          <a href="/nieuwbouw.php" class="block text-stone-400 hover:text-white text-sm py-1">Nieuwbouw</a>
+          <a href="/afbouw.php" class="block text-stone-400 hover:text-white text-sm py-1">Afbouw</a>
+        </div>
+      </div>
+      <a href="index.php#projecten" class="text-stone-300 hover:text-white text-lg py-2">Projecten</a>
+      <a href="index.php#reviews" class="text-stone-300 hover:text-white text-lg py-2">Reviews</a>
+      <a href="/over-ons.php" class="text-stone-300 hover:text-white text-lg py-2">Over ons</a>
+      <a href="/contact.php" class="text-stone-300 hover:text-white text-lg py-2">Contact</a>
+      <a href="/polski.php" class="text-stone-400 hover:text-white text-sm py-2 border-t border-stone-800 mt-2 pt-4">Strona polska &rarr;</a>
+      <a href="/offerte.php" class="bg-rww-red text-white px-5 py-3 rounded text-center font-semibold mt-4">Offerte aanvragen</a>
+      <?php endif; ?>
+      <a href="tel:<?= e(site('company.phone')) ?>" class="text-stone-300 hover:text-white text-center py-2 mt-2">
+        <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        06 274 544 16
+      </a>
+    </nav>
+  </div>
   <!-- /HEADER -->

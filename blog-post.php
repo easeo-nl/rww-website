@@ -17,8 +17,10 @@ $groepLinks = [
     'keuken'    => ['url' => '/keuken.php',    'naam' => 'Keukens'],
     'stucwerk'  => ['url' => '/stucwerk.php',  'naam' => 'Stucwerk'],
     'vloeren'   => ['url' => '/vloeren.php',   'naam' => 'Vloeren'],
-    'renovatie' => ['url' => '/renovatie.php', 'naam' => 'Renovatie'],
-    'interieur' => ['url' => '/interieur.php', 'naam' => 'Interieur'],
+    'renovatie'  => ['url' => '/renovatie.php',  'naam' => 'Renovatie'],
+    'interieur'  => ['url' => '/interieur.php',  'naam' => 'Interieur'],
+    'nieuwbouw'  => ['url' => '/nieuwbouw.php',  'naam' => 'Nieuwbouw'],
+    'afbouw'     => ['url' => '/afbouw.php',     'naam' => 'Afbouw'],
 ];
 
 $groep = $post['groep'] ?? '';
