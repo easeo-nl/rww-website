@@ -24,7 +24,7 @@ require_once __DIR__ . '/includes/header.php';
           <?= page_content('badkamer', 'hero_titel', 'Badkamer op maat —<br>van tekening tot tegels') ?>
         </h1>
         <p class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
-          <?= e(page_content('badkamer', 'hero_subtitel', 'Agnieszka tekent uw badkamer op maat. Raphaël en zijn team bouwen hem precies zoals gepland. Tegelwerk, sanitair, beton ciré — alles door één team.')) ?>
+          <?= e(page_content('badkamer', 'hero_subtitel', 'Agnieszka tekent uw badkamer op maat. Rafael en zijn team bouwen hem precies zoals gepland. Tegelwerk, sanitair, beton ciré — alles door één team.')) ?>
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors text-center">
@@ -114,8 +114,8 @@ require_once __DIR__ . '/includes/header.php';
             'titel' => 'Kennismaking en Wensen',
             'items' => [
               'We bespreken jouw wensen, stijl en budget',
-              'WWe bekijken de ruimte en technische mogelijkheden',
-              'JJe deelt inspiratie (modern, hotelstijl, minimalistisch…',
+              'We bekijken de ruimte en technische mogelijkheden',
+              'Je deelt inspiratie (modern, hotelstijl, minimalistisch…',
             ],
             'cta'   => '👉 De basis voor jouw perfecte badkamer wordt gelegd',
           ],

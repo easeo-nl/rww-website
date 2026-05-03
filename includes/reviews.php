@@ -35,10 +35,10 @@ $is_pl = ($reviews_lang === 'pl');
   <div class="review-card bg-rww-light rounded-lg p-6 border border-stone-200">
     <div class="stars text-sm mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
     <?php if ($is_pl): ?>
-    <p class="text-rww-red text-sm font-semibold mb-3 italic">&ldquo;Raphaël wykonuje pracę na najwyższym poziomie.&rdquo;</p>
+    <p class="text-rww-red text-sm font-semibold mb-3 italic">&ldquo;Rafael wykonuje pracę na najwyższym poziomie.&rdquo;</p>
     <?php endif; ?>
     <p class="text-rww-text text-sm leading-relaxed mb-5">
-      &ldquo;Raphaël levert top werk, tot in de puntjes verzorgd, hij stopt pas met zijn werk als de klant én hij zelf tevreden is.&rdquo;
+      &ldquo;Rafael levert top werk, tot in de puntjes verzorgd, hij stopt pas met zijn werk als de klant én hij zelf tevreden is.&rdquo;
     </p>
     <div class="flex items-center gap-3">
       <div class="w-10 h-10 bg-rww-red/10 rounded-full flex items-center justify-center">
