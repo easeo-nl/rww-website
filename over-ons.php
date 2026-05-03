@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/content.php';
 
 $pageTitle       = 'Over ons — RWW Bouw';
-$metaDescription = 'Leer RWW Bouw kennen. Vakmanschap van Raphaël en Agnieszka in Amersfoort en Bunschoten-Spakenburg. Eerst tekenen, dan bouwen.';
+$metaDescription = 'Leer RWW Bouw kennen. Vakmanschap van Rafael en Agnieszka in Amersfoort en Bunschoten-Spakenburg. Eerst tekenen, dan bouwen.';
 $htmlLang        = 'nl';
 
 require_once __DIR__ . '/includes/header.php';
@@ -21,7 +21,7 @@ require_once __DIR__ . '/includes/header.php';
           Vakmanschap met een menselijke kant
         </h1>
         <p class="text-stone-300 text-lg sm:text-xl leading-relaxed">
-          Raphaël bouwt, Agnieszka ontwerpt. Samen zorgen ze dat u weet wat u krijgt — voordat de eerste hamer wordt opgepakt.
+          Rafael bouwt, Agnieszka ontwerpt. Samen zorgen ze dat u weet wat u krijgt — voordat de eerste hamer wordt opgepakt.
         </p>
       </div>
     </div>
@@ -59,7 +59,7 @@ require_once __DIR__ . '/includes/header.php';
           ['nr' => '1', 'titel' => 'Inmeting en ontwerp', 'tekst' => 'Agnieszka komt bij u langs, meet alles op en maakt een professionele bouwtekening op maat.'],
           ['nr' => '2', 'titel' => '3D-visualisatie', 'tekst' => 'U ziet exact hoe uw nieuwe ruimte eruitziet. Geen verrassingen, maar een helder beeld vooraf.'],
           ['nr' => '3', 'titel' => 'Heldere offerte', 'tekst' => 'Op basis van de tekening ontvangt u een duidelijke offerte. U weet precies wat het kost.'],
-          ['nr' => '4', 'titel' => 'Vakkundige uitvoering', 'tekst' => 'Raphaël en zijn team bouwen precies wat getekend is. Tot in de puntjes afgewerkt.'],
+          ['nr' => '4', 'titel' => 'Vakkundige uitvoering', 'tekst' => 'Rafael en zijn team bouwen precies wat getekend is. Tot in de puntjes afgewerkt.'],
         ];
         foreach ($stappen as $stap): ?>
         <div class="process-step relative text-center p-6">

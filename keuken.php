@@ -24,7 +24,7 @@ require_once __DIR__ . '/includes/header.php';
           <?= page_content('keuken', 'hero_titel', 'Nieuwe keuken laten plaatsen?') ?>
         </h1>
         <p class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
-          <?= e(page_content('keuken', 'hero_subtitel', 'Agnieszka tekent uw keuken op maat. Raphaël en zijn team plaatsen hem precies zoals gepland. Maatwerk kasten, tegelwerk, elektra en loodgieterwerk — alles door één team.')) ?>
+          <?= e(page_content('keuken', 'hero_subtitel', 'Agnieszka tekent uw keuken op maat. Rafael en zijn team plaatsen hem precies zoals gepland. Maatwerk kasten, tegelwerk, elektra en loodgieterwerk — alles door één team.')) ?>
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors text-center">

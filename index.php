@@ -59,7 +59,7 @@ require_once __DIR__ . '/includes/header.php';
         <?php
         $diensten = [
           ['titel' => 'Badkamers op maat', 'tekst' => 'Complete badkamerrenovatie inclusief tegelwerk, sanitair en op maat gemaakte meubels van beton ciré.', 'img' => '/images/uploads/170.jpg', 'alt' => 'Badkamerrenovatie', 'link' => 'badkamer.php'],
-          ['titel' => 'Keukens op maat', 'tekst' => 'Van ontwerp tot plaatsing. Agnieszka ontwerpt, Raphaël bouwt. Inclusief leidingwerk en afwerking.', 'img' => '/images/uploads/53.jpg', 'alt' => 'Keukenrenovatie', 'link' => 'keuken.php'],
+          ['titel' => 'Keukens op maat', 'tekst' => 'Van ontwerp tot plaatsing. Agnieszka ontwerpt, Rafael bouwt. Inclusief leidingwerk en afwerking.', 'img' => '/images/uploads/53.jpg', 'alt' => 'Keukenrenovatie', 'link' => 'keuken.php'],
           ['titel' => 'Complete woningrenovatie', 'tekst' => 'Badkamer, keuken, vloer, zolder, schilderwerk — alles in één keer, door één team.', 'img' => '/images/uploads/185.jpg', 'alt' => 'Complete woningrenovatie', 'link' => 'renovatie.php'],
           ['titel' => 'Stucwerk en afwerking', 'tekst' => 'Strakke wanden en plafonds. Beton ciré, microbeton en traditioneel stucwerk. Super strak en mooi glad afgewerkt.', 'img' => '/images/uploads/177.jpg', 'alt' => 'Stucwerk', 'link' => 'stucwerk.php'],
           ['titel' => 'Vloeren en tegelwerk', 'tekst' => 'Vloerverwarming, broodjesvloer, egalisatie en tegelwerk. Vakwerk tot in de puntjes.', 'img' => '/images/uploads/20180410_104638.jpg', 'alt' => 'Vloerverwarming', 'link' => 'vloeren.php'],
@@ -117,7 +117,7 @@ require_once __DIR__ . '/includes/header.php';
           ['nr' => '1', 'titel' => 'Inmeting en ontwerp', 'tekst' => 'Agnieszka komt bij u langs, meet alles op en maakt een professionele bouwtekening op maat.'],
           ['nr' => '2', 'titel' => '3D-visualisatie', 'tekst' => 'U ziet exact hoe uw nieuwe ruimte eruitziet. Geen verrassingen, maar een helder beeld vooraf.'],
           ['nr' => '3', 'titel' => 'Heldere offerte', 'tekst' => 'Op basis van de tekening ontvangt u een duidelijke offerte. U weet precies wat het kost.'],
-          ['nr' => '4', 'titel' => 'Vakkundige uitvoering', 'tekst' => 'Raphaël en zijn team bouwen precies wat getekend is. Tot in de puntjes afgewerkt.'],
+          ['nr' => '4', 'titel' => 'Vakkundige uitvoering', 'tekst' => 'Rafael en zijn team bouwen precies wat getekend is. Tot in de puntjes afgewerkt.'],
         ];
         foreach ($stappen as $stap): ?>
         <div class="process-step relative text-center p-6">

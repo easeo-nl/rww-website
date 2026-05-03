@@ -56,7 +56,7 @@ rww-website/
 3. **Diensten** — 6 diensten in grid met foto's
 4. **Projecten** — Fotogrid met hover-overlays
 5. **Reviews** — Google (6) + Werkspot (6) reviews
-6. **Over ons** — Verhaal Raphaël + Agnieszka, statistieken
+6. **Over ons** — Verhaal Rafael + Agnieszka, statistieken
 7. **Contact** — Formulier + contactgegevens
 8. **Footer** — Bedrijfsinfo, diensten, "Powered by EASEO"
 

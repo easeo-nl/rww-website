@@ -144,7 +144,7 @@ require_once __DIR__ . '/includes/header.php';
             'img'   => '/images/uploads/108.jpg',
             'titel' => 'Uitvoering en begeleiding',
             'items' => [
-              'Raphaël en het team bouwen precies zoals getekend',
+              'Rafael en het team bouwen precies zoals getekend',
               'Agnieszka begeleidt het proces op locatie',
               'Afwijkingen van het plan worden direct besproken',
             ],

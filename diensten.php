@@ -31,7 +31,7 @@ require_once __DIR__ . '/includes/header.php';
           <?= page_content('diensten', 'hero_titel', 'Van nieuwbouw<br>tot renovatie') ?>
         </h1>
         <p class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
-          <?= e(page_content('diensten', 'hero_subtitel', 'Raphaël en zijn team bouwen, verbouwen en renoveren. Van ruw casco tot afgewerkt interieur — alles door één team in Amersfoort en omgeving.')) ?>
+          <?= e(page_content('diensten', 'hero_subtitel', 'Rafael en zijn team bouwen, verbouwen en renoveren. Van ruw casco tot afgewerkt interieur — alles door één team in Amersfoort en omgeving.')) ?>
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors text-center">
@@ -58,7 +58,7 @@ require_once __DIR__ . '/includes/header.php';
       <div class="text-center max-w-3xl mx-auto mb-12 fade-in">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Wat wij doen</span>
         <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-4 font-bold">Alles onder één dak</h2>
-        <p class="text-rww-muted text-lg leading-relaxed">Geen gedoe met losse aannemers. Raphaël coördineert het hele traject — van eerste tekening tot sleuteloverdracht.</p>
+        <p class="text-rww-muted text-lg leading-relaxed">Geen gedoe met losse aannemers. Rafael coördineert het hele traject — van eerste tekening tot sleuteloverdracht.</p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 fade-in">
@@ -265,7 +265,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="fade-in order-1 lg:order-2">
           <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Complete woningrenovatie</span>
           <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-6 font-bold">Heel de woning — één aanspreekpunt</h2>
-          <p class="text-rww-muted text-lg leading-relaxed mb-6">Van keuken tot badkamer, van woonkamer tot slaapkamer — een complete woningrenovatie vraagt om één team dat het overzicht houdt. Dat zijn wij. Agnieszka maakt het ontwerp, Raphaël bouwt het.</p>
+          <p class="text-rww-muted text-lg leading-relaxed mb-6">Van keuken tot badkamer, van woonkamer tot slaapkamer — een complete woningrenovatie vraagt om één team dat het overzicht houdt. Dat zijn wij. Agnieszka maakt het ontwerp, Rafael bouwt het.</p>
           <ul class="space-y-3 mb-8">
             <?php foreach (['Interieurontwerp voor de gehele woning', 'Vaste volgorde: tekenen, dan bouwen', 'Geen losse onderaannemers', 'Heldere prijsafspraken vooraf'] as $punt): ?>
             <li class="flex items-start gap-3 text-rww-text">
@@ -369,7 +369,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="fade-in order-1 lg:order-2">
           <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Vloeren en tegelwerk</span>
           <h2 class="font-display text-3xl sm:text-4xl text-rww-dark mt-4 mb-6 font-bold">Strak gelegd, netjes afgewerkt</h2>
-          <p class="text-rww-muted text-lg leading-relaxed mb-6">Van groot formaat tegels tot patroonvloeren — wij leggen ze waterpas en strak. In de badkamer, keuken, hal of woonkamer. Agnieszka helpt u met de keuze; Raphaël legt ze neer.</p>
+          <p class="text-rww-muted text-lg leading-relaxed mb-6">Van groot formaat tegels tot patroonvloeren — wij leggen ze waterpas en strak. In de badkamer, keuken, hal of woonkamer. Agnieszka helpt u met de keuze; Rafael legt ze neer.</p>
           <ul class="space-y-3 mb-8">
             <?php foreach (['Vloer- en wandtegels in elk formaat', 'Patroonvloeren en visgraat', 'Tegelwerk in badkamer en keuken', 'Voegwerk en afkitwerk'] as $punt): ?>
             <li class="flex items-start gap-3 text-rww-text">
