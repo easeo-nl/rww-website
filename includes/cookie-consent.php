@@ -1,10 +1,10 @@
 <?php
 /**
  * EASEO CMS — AVG/GDPR Cookie Consent Banner
- * Uses localStorage key: easeo_cookies
+ * Cookie naam: rww_cookies (gelezen door PHP has_cookie_consent() en Consent Mode v2 JS)
  */
-?>
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 text-white p-4 z-[9999] shadow-lg transform translate-y-full transition-transform duration-300" style="display:none; background-color:#1C1917;">
+if (!isset($_COOKIE['rww_cookies'])): ?>
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 text-white p-4 z-[9999] shadow-lg transform translate-y-full transition-transform duration-300" style="background-color:#1C1917;">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="text-sm flex-1">
             Wij gebruiken cookies om uw ervaring te verbeteren. Door deze site te gebruiken gaat u akkoord met ons
@@ -23,29 +23,40 @@
 <script>
 (function() {
     var banner = document.getElementById('cookie-banner');
-    try {
-        var consent = localStorage.getItem('easeo_cookies');
-        if (!consent) {
-            banner.style.display = 'block';
-            setTimeout(function() { banner.classList.remove('translate-y-full'); }, 100);
-        }
-    } catch(e) {}
+    setTimeout(function() { banner.classList.remove('translate-y-full'); }, 100);
 })();
 
+function setRwwCookie(value) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+    document.cookie = 'rww_cookies=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+}
+
 function easeoAcceptCookies() {
-    try { localStorage.setItem('easeo_cookies', 'accepted'); } catch(e) {}
-    closeBanner();
-    location.reload();
+    setRwwCookie('accepted');
+    if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+        });
+    }
+    // Reload zodat niet-Google scripts (Facebook Pixel, custom code) ook laden
+    window.location.reload();
 }
 
 function easeoDeclineCookies() {
-    try { localStorage.setItem('easeo_cookies', 'declined'); } catch(e) {}
-    closeBanner();
-}
-
-function closeBanner() {
-    var banner = document.getElementById('cookie-banner');
-    banner.classList.add('translate-y-full');
-    setTimeout(function() { banner.style.display = 'none'; }, 300);
+    setRwwCookie('declined');
+    if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    }
+    document.getElementById('cookie-banner').remove();
 }
 </script>
+<?php endif; ?>

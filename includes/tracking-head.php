@@ -1,53 +1,81 @@
 <?php
 /**
  * EASEO CMS — Tracking scripts (head section)
- * Only loads if cookie consent is given (checked via JS)
+ *
+ * Aanpak: Google Consent Mode v2 (advanced).
+ * - GTM laadt ALTIJD, ook zonder consent.
+ * - Default consent state = denied; bij accept stuurt cookie-consent.php
+ *   een gtag('consent','update', granted) door.
+ * - Niet-Google scripts (Facebook Pixel, custom code) blijven achter
+ *   has_cookie_consent() staan.
  */
-$gtm_id = site('tracking.gtm_id');
-$ga4_id = site('tracking.google_analytics_id');
-$fb_pixel = site('tracking.facebook_pixel_id');
+$gtm_id     = site('tracking.gtm_id');
+$ga4_id     = site('tracking.google_analytics_id');
+$fb_pixel   = site('tracking.facebook_pixel_id');
 $custom_head = site('tracking.custom_head_code');
 ?>
+<!-- Consent Mode v2 — default denied, gtag stub altijd beschikbaar -->
 <script>
-function easeoHasConsent() {
-    try { return localStorage.getItem('easeo_cookies') === 'accepted'; }
-    catch(e) { return false; }
-}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  // Eerdere keuze toepassen vóór tags vuren
+  (function () {
+    var match = document.cookie.split('; ').find(function (r) { return r.indexOf('rww_cookies=') === 0; });
+    if (match && match.split('=')[1] === 'accepted') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  })();
 </script>
+
 <?php if ($gtm_id): ?>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','<?= e($gtm_id) ?>');</script>
+<!-- End Google Tag Manager -->
+<?php endif; ?>
+
+<?php if ($ga4_id && !$gtm_id): ?>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= e($ga4_id) ?>"></script>
 <script>
-if (easeoHasConsent()) {
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','<?= e($gtm_id) ?>');
-}
+gtag('js', new Date());
+gtag('config', '<?= e($ga4_id) ?>');
 </script>
 <?php endif; ?>
-<?php if ($ga4_id): ?>
-<script>
-if (easeoHasConsent()) {
-    var s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=<?= e($ga4_id) ?>';
-    s.async = true;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '<?= e($ga4_id) ?>');
-}
-</script>
-<?php endif; ?>
+
+<?php if (has_cookie_consent()): ?>
 <?php if ($fb_pixel): ?>
+<!-- Facebook Pixel -->
 <script>
-if (easeoHasConsent()) {
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '<?= e($fb_pixel) ?>');
-    fbq('track', 'PageView');
-}
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '<?= e($fb_pixel) ?>');
+fbq('track', 'PageView');
 </script>
 <?php endif; ?>
-<?php if ($custom_head): ?>
-<script>
-if (easeoHasConsent()) {
-    document.write(<?= json_encode($custom_head) ?>);
-}
-</script>
-<?php endif; ?>
+<?php if ($custom_head):
+  echo "\n" . $custom_head . "\n";
+endif; ?>
+<?php endif; // has_cookie_consent ?>
