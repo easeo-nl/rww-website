@@ -50,7 +50,7 @@ $is_polski = ($htmlLang ?? 'nl') === 'pl';
         <div>
           <h4 class="text-white font-semibold text-sm mb-4">Contact</h4>
           <ul class="space-y-2 text-stone-500 text-sm">
-            <li><a href="tel:<?= e(site('company.phone')) ?>" class="hover:text-stone-300 transition-colors">06 274 544 16</a></li>
+            <li><a href="tel:<?= e(site('company.phone')) ?>" class="hover:text-stone-300 transition-colors">+31 6 274 544 16</a></li>
             <li><a href="mailto:<?= e(site('company.email')) ?>" class="hover:text-stone-300 transition-colors"><?= e(site('company.email')) ?></a></li>
             <li><a href="https://www.facebook.com/profile.php?id=100091803444039" target="_blank" rel="noopener" class="hover:text-stone-300 transition-colors">Facebook</a></li>
             <li>Amersfoort en Bunschoten-Spakenburg</li>
