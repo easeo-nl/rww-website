@@ -41,7 +41,7 @@ if (!is_array($tracking)) $tracking = [];
             <h2 class="text-lg font-semibold text-white mb-4">Google Tag Manager</h2>
             <label class="block text-sm font-medium text-gray-300 mb-1">GTM Container ID <span class="help-tooltip" data-help="Google Tag Manager container-ID. Begint met GTM-. Hiermee kun je alle tracking centraal beheren.">?</span></label>
             <input type="text" name="gtm_id" value="<?= e($tracking['gtm_id'] ?? '') ?>" class="admin-input w-full max-w-md" placeholder="GTM-XXXXXXX">
-            <p class="text-xs text-gray-500 mt-1">Wordt alleen geladen na cookie consent.</p>
+            <p class="text-xs text-gray-500 mt-1">Laadt altijd (Consent Mode v2). Tracking vindt alleen plaats na cookie consent.</p>
         </div>
 
         <div>

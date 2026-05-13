@@ -93,6 +93,10 @@ function handle_redirects(): void {
     }
 }
 
+function has_cookie_consent(): bool {
+    return isset($_COOKIE['rww_cookies']) && $_COOKIE['rww_cookies'] === 'accepted';
+}
+
 // Run redirects on every page load
 handle_redirects();
 
