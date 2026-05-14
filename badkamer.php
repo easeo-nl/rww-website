@@ -235,6 +235,85 @@ require_once __DIR__ . '/includes/header.php';
   <?php endif; ?>
   <!-- /SECTION: projecten -->
 
+  <!-- SECTION: faq -->
+  <?php
+  $faq_items = [
+    [
+      'vraag'    => 'Wat kost een badkamerrenovatie?',
+      'antwoord' => 'De kosten hangen af van de grootte van de badkamer, de materiaalkeuze en de hoeveelheid werk. We geven altijd een vaste prijs na een gratis inmeting bij u thuis, zodat u nooit voor verrassingen staat.',
+    ],
+    [
+      'vraag'    => 'Hoe lang duurt een badkamerrenovatie?',
+      'antwoord' => 'Een eenvoudige doucherenovatie doen we vaak in 1 tot 2 dagen. Een complete badkamerrenovatie duurt gemiddeld 1 tot 2 weken, afhankelijk van de wensen en de technische situatie.',
+    ],
+    [
+      'vraag'    => 'Moeten we zelf tegels en sanitair regelen?',
+      'antwoord' => 'Nee, wij regelen alles. Van ontwerp en materiaalkeuze tot het daadwerkelijke tegelwerk en sanitair. U hoeft nergens anders voor aan te kloppen.',
+    ],
+    [
+      'vraag'    => 'Werken jullie ook bij oudere woningen of complexe situaties?',
+      'antwoord' => 'Ja. We beginnen altijd met een gratis inmeting waarbij we de technische staat beoordelen. Leidingwerk, afvoer en elektra passen we indien nodig aan. We lossen eventuele problemen op voordat de renovatie begint.',
+    ],
+    [
+      'vraag'    => 'Krijgen we garantie op het werk?',
+      'antwoord' => 'Ja, we geven 5 jaar garantie op onze werkzaamheden. U kunt ons altijd bereiken als er iets is na de oplevering.',
+    ],
+    [
+      'vraag'    => 'Hoe vraag ik een offerte aan?',
+      'antwoord' => 'Heel eenvoudig: vraag een gratis inmeting aan via het contactformulier onderaan deze pagina of bel ons direct. We komen bij u langs, bekijken de situatie en sturen u een heldere offerte zonder verplichtingen.',
+    ],
+  ];
+  ?>
+  <section class="bg-rww-light py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-rww-red font-semibold uppercase tracking-widest text-sm">Veelgestelde vragen</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">Uw vragen, onze antwoorden</h2>
+      </div>
+      <div class="divide-y divide-rww-stone fade-in">
+        <?php foreach ($faq_items as $i => $item): ?>
+        <div>
+          <button
+            onclick="toggleFaq(this)"
+            aria-expanded="false"
+            aria-controls="faq-answer-<?= $i ?>"
+            class="w-full flex justify-between items-center py-5 text-left gap-4 group">
+            <span class="font-display text-lg font-semibold text-rww-dark"><?= e($item['vraag']) ?></span>
+            <svg class="w-5 h-5 shrink-0 text-rww-red transition-transform duration-200 group-aria-expanded:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq-answer-<?= $i ?>" class="hidden pb-5 text-rww-muted leading-relaxed">
+            <?= e($item['antwoord']) ?>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <script>
+  function toggleFaq(btn) {
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    document.getElementById(btn.getAttribute('aria-controls')).classList.toggle('hidden');
+  }
+  </script>
+  <!-- /SECTION: faq -->
+
+  <script type="application/ld+json">
+  <?= json_encode([
+    '@context'   => 'https://schema.org',
+    '@type'      => 'FAQPage',
+    'mainEntity' => array_map(fn($item) => [
+      '@type'          => 'Question',
+      'name'           => $item['vraag'],
+      'acceptedAnswer' => [
+        '@type' => 'Answer',
+        'text'  => $item['antwoord'],
+      ],
+    ], $faq_items),
+  ], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>
+  </script>
 
    <!-- SECTION: reviews -->
     <section>
