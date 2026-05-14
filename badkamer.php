@@ -10,6 +10,7 @@ $htmlLang = 'nl';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
+<div class="pb-16 md:pb-0">
 
   <!-- SECTION: hero -->
   <section id="hero" class="relative min-h-screen flex items-center">
@@ -569,5 +570,36 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <!-- /SECTION: contact -->
 
+</div>
+
+<!-- STICKY CTA -->
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-50
+  md:hidden bg-rww-dark border-t border-stone-700 px-4 py-3
+  transition-transform duration-300">
+  <a href="#contact"
+     class="block w-full bg-rww-red hover:bg-rww-red-light text-white
+     text-center font-semibold py-3 rounded transition-colors">
+    Gratis inmeting aanvragen
+  </a>
+</div>
+<script>
+const stickyCta = document.getElementById('sticky-cta');
+const contactSection = document.getElementById('contact');
+
+if (stickyCta && contactSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        stickyCta.style.transform = 'translateY(100%)';
+      } else {
+        stickyCta.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(contactSection);
+}
+</script>
+<!-- /STICKY CTA -->
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
