@@ -3,8 +3,8 @@ require_once __DIR__ . '/includes/content.php';
 require_once __DIR__ . '/includes/blog-engine.php';
 require_once __DIR__ . '/includes/form-engine.php';
 
-$pageTitle = page_content('badkamer', 'seo_title', 'Badkamerrenovatie op maat — RWW Bouw');
-$metaDescription = page_content('badkamer', 'seo_description', 'Complete badkamerrenovatie in Amersfoort en omgeving. Tegelwerk, sanitair, beton ciré. Eerst tekenen, dan bouwen.');
+$pageTitle = page_content('badkamer', 'seo_title', 'Badkamerrenovatie Amersfoort — RWW Bouw | Gratis inmeting');
+$metaDescription = page_content('badkamer', 'seo_description', 'Complete badkamerrenovatie in Amersfoort en omgeving. Tegelwerk, sanitair en inloopdouche door één team. Vaste prijs na gratis inmeting. Bel ons direct.');
 $htmlLang = 'nl';
 
 require_once __DIR__ . '/includes/header.php';
@@ -21,10 +21,10 @@ require_once __DIR__ . '/includes/header.php';
       <div class="max-w-2xl">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Badkamerrenovatie</span>
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mt-4 mb-6">
-          <?= page_content('badkamer', 'hero_titel', 'Badkamer op maat —<br>van tekening tot tegels') ?>
+          <?= page_content('badkamer', 'hero_titel', 'Badkamerrenovatie in Amersfoort —<br>van tekening tot tegels') ?>
         </h1>
         <p class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
-          <?= e(page_content('badkamer', 'hero_subtitel', 'Agnieszka tekent uw badkamer op maat. Rafael en zijn team bouwen hem precies zoals gepland. Tegelwerk, sanitair, beton ciré — alles door één team.')) ?>
+          <?= e(page_content('badkamer', 'hero_subtitel', 'Agnieszka tekent uw badkamer op maat. Rafael en zijn team bouwen hem precies zoals gepland — actief in Amersfoort en omgeving. Tegelwerk, sanitair, beton ciré — alles door één team.')) ?>
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors text-center">
@@ -53,7 +53,7 @@ require_once __DIR__ . '/includes/header.php';
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Wat wij doen</span>
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
-          Complete badkamerrenovatie
+          Complete badkamerrenovatie in Amersfoort en omgeving
         </h2>
         <p class="text-rww-muted text-lg">Eén team voor het hele traject — van sloopwerk en leidingwerk tot tegels en de laatste afwerking.</p>
       </div>
@@ -416,7 +416,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="fade-in">
           <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Contact</span>
           <h2 class="font-display text-3xl sm:text-4xl text-white mt-4 mb-6 font-bold">
-            Plan een inmeting voor uw badkamer
+            Plan een gratis inmeting in Amersfoort en omgeving
           </h2>
           <p class="text-stone-400 text-lg leading-relaxed mb-8">Vertel ons over uw badkamer. We nemen snel contact met u op voor een vrijblijvende inmeting en offerte.</p>
 
