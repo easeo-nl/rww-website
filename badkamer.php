@@ -183,6 +183,79 @@ require_once __DIR__ . '/includes/header.php';
   <!-- /SECTION: werkwijze -->
 
 
+  <!-- SECTION: voor-na -->
+  <?php
+  $voor_na_items = [
+    [
+      'label'    => 'Complete renovatie — Amersfoort',
+      'voor_img' => '/images/uploads/voor-1.jpg',
+      'na_img'   => '/images/uploads/na-1.jpg',
+      'voor_alt' => 'Badkamer voor renovatie Amersfoort',
+      'na_alt'   => 'Badkamer na renovatie Amersfoort',
+    ],
+    [
+      'label'    => 'Doucherenovatie — Nijkerk',
+      'voor_img' => '/images/uploads/voor-2.jpg',
+      'na_img'   => '/images/uploads/na-2.jpg',
+      'voor_alt' => 'Douche voor renovatie Nijkerk',
+      'na_alt'   => 'Douche na renovatie Nijkerk',
+    ],
+    [
+      'label'    => 'Complete renovatie — Leusden',
+      'voor_img' => '/images/uploads/voor-3.jpg',
+      'na_img'   => '/images/uploads/na-3.jpg',
+      'voor_alt' => 'Badkamer voor renovatie Leusden',
+      'na_alt'   => 'Badkamer na renovatie Leusden',
+    ],
+  ];
+  ?>
+  <section class="py-20 md:py-28 bg-rww-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Ons werk</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-4 mb-6 font-bold">Van oud naar nieuw — bekijk de transformatie</h2>
+      </div>
+      <div class="fade-in">
+        <div class="slider-container" data-slider>
+          <div class="slider-track" data-slider-track>
+            <?php foreach ($voor_na_items as $item): ?>
+            <div class="slider-slide">
+              <div class="flex flex-col sm:flex-row gap-3">
+                <div class="relative flex-1">
+                  <div class="aspect-[4/3] overflow-hidden rounded-lg">
+                    <img src="<?= e($item['voor_img']) ?>" alt="<?= e($item['voor_alt']) ?>" class="w-full h-full object-cover" loading="lazy">
+                  </div>
+                  <span class="absolute top-3 left-3 bg-white/90 text-rww-dark text-xs font-semibold px-2 py-1 rounded shadow-sm">Voor</span>
+                </div>
+                <div class="relative flex-1">
+                  <div class="aspect-[4/3] overflow-hidden rounded-lg">
+                    <img src="<?= e($item['na_img']) ?>" alt="<?= e($item['na_alt']) ?>" class="w-full h-full object-cover" loading="lazy">
+                  </div>
+                  <span class="absolute top-3 left-3 bg-white/90 text-rww-dark text-xs font-semibold px-2 py-1 rounded shadow-sm">Na</span>
+                </div>
+              </div>
+              <p class="text-center text-stone-300 text-sm mt-4"><?= e($item['label']) ?></p>
+            </div>
+            <?php endforeach; ?>
+          </div>
+          <?php if (count($voor_na_items) > 1): ?>
+          <div class="slider-controls flex items-center justify-center gap-4 mt-6">
+            <button class="slider-btn-prev" aria-label="Vorige">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="slider-dots" data-slider-dots></div>
+            <button class="slider-btn-next" aria-label="Volgende">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: voor-na -->
+
+
   <!-- SECTION: projecten -->
   <?php
   $badkamer_fotos = array_filter(
