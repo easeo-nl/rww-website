@@ -315,6 +315,85 @@ require_once __DIR__ . '/includes/header.php';
   ], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>
   </script>
 
+  <!-- SECTION: prijzen -->
+  <?php
+  $prijskaarten = [
+    [
+      'titel'     => 'Doucherenovatie',
+      'prijs'     => 'Vanaf €3.500',
+      'tijdsduur' => '1 tot 2 dagen',
+      'items'     => [
+        'Vervanging douche of bad',
+        'Nieuw tegelwerk',
+        'Nieuwe douchekraan en afvoer',
+        'Nette oplevering',
+      ],
+      'primair'   => false,
+    ],
+    [
+      'titel'     => 'Complete badkamerrenovatie',
+      'prijs'     => 'Vanaf €8.500',
+      'tijdsduur' => '1 tot 2 weken',
+      'items'     => [
+        'Volledige sloop en opbouw',
+        'Tegelwerk, sanitair en meubels',
+        'Elektra en leidingwerk indien nodig',
+        'Inloopdouche of ligbad naar keuze',
+        '5 jaar garantie',
+      ],
+      'primair'   => true,
+    ],
+    [
+      'titel'     => 'Maatwerk renovatie',
+      'prijs'     => 'Op aanvraag',
+      'tijdsduur' => 'In overleg',
+      'items'     => [
+        'Beton ciré of speciale afwerking',
+        'Vloerverwarming',
+        'Inbouwspots en luxe sanitair',
+        'Volledig op maat ontworpen',
+        '5 jaar garantie',
+      ],
+      'primair'   => false,
+    ],
+  ];
+  ?>
+  <section class="bg-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 fade-in">
+        <p class="text-rww-red font-semibold uppercase tracking-widest text-sm">Prijsindicatie</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-4 font-bold">Wat kost een badkamerrenovatie?</h2>
+        <p class="text-rww-muted text-lg">Altijd een vaste prijs na een gratis inmeting bij u thuis.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+        <?php foreach ($prijskaarten as $kaart): ?>
+        <div class="flex flex-col bg-rww-light rounded-lg p-8 <?= $kaart['primair'] ? 'border-2 border-rww-red' : '' ?>">
+          <h3 class="font-display text-xl text-rww-dark font-semibold mb-4"><?= e($kaart['titel']) ?></h3>
+          <p class="font-display text-3xl font-bold text-rww-dark mb-1"><?= e($kaart['prijs']) ?></p>
+          <p class="text-rww-muted text-sm mb-6"><?= e($kaart['tijdsduur']) ?></p>
+          <ul class="space-y-3 mb-8 flex-1">
+            <?php foreach ($kaart['items'] as $item): ?>
+            <li class="flex items-start gap-3 text-rww-text text-sm leading-relaxed">
+              <svg class="w-5 h-5 text-rww-red shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><?= e($item) ?></span>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-6 py-3 rounded font-semibold transition-colors text-center">
+            Gratis inmeting aanvragen
+          </a>
+        </div>
+        <?php endforeach; ?>
+      </div>
+      <p class="text-rww-muted text-sm text-center max-w-2xl mx-auto mt-8">
+        Bovenstaande prijzen zijn indicaties. De exacte prijs hangt af van de grootte van uw badkamer, de materiaalkeuze en de technische situatie. Na een gratis inmeting ontvangt u altijd een vaste offerte zonder verrassingen.
+      </p>
+    </div>
+  </section>
+  <!-- /SECTION: prijzen -->
+
    <!-- SECTION: reviews -->
     <section>
     <div>
