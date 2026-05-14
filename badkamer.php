@@ -47,6 +47,50 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <!-- /SECTION: hero -->
 
+  <!-- SECTION: usps -->
+  <?php
+  $usp_items = [
+    [
+      'icoon' => 'check',
+      'titel' => 'Altijd één aanspreekpunt',
+      'tekst' => 'Geen losse onderaannemers. Één team van begin tot eind.',
+    ],
+    [
+      'icoon' => 'check',
+      'titel' => '5 jaar garantie',
+      'tekst' => 'Op al ons tegelwerk, sanitair en afwerking.',
+    ],
+    [
+      'icoon' => 'check',
+      'titel' => 'Vaste prijs na inmeting',
+      'tekst' => 'Geen verrassingen achteraf. U weet vooraf precies wat het kost.',
+    ],
+    [
+      'icoon' => 'check',
+      'titel' => 'Actief in Amersfoort en omgeving',
+      'tekst' => 'Snel ter plaatse, korte lijnen en persoonlijk contact.',
+    ],
+  ];
+  ?>
+  <section class="bg-rww-dark py-8 md:py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <?php foreach ($usp_items as $usp): ?>
+        <div class="flex items-start gap-4">
+          <svg class="w-6 h-6 text-rww-red shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <div>
+            <p class="text-white font-semibold text-sm mb-1"><?= e($usp['titel']) ?></p>
+            <p class="text-stone-400 text-sm leading-relaxed"><?= e($usp['tekst']) ?></p>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: usps -->
+
     <!-- SECTION: diensten -->
   <section id="diensten" class="py-20 md:py-28 bg-rww-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
