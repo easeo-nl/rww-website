@@ -45,23 +45,44 @@ jobs:
           echo "== Voor pull =="
           git rev-parse --short HEAD
 
+          # Hotfix-bescherming: snapshot CMS-state (data/*.json) voor de pull, zodat
+          # GTM-id, content, branding etc. nooit overschreven worden door git pull.
+          # Structurele fix komt in de cutover naar composer + untracked data/ (spec
+          # 2026-05-23-easeo-cms-cicd-en-update-flow-design).
+          SNAPSHOT="/tmp/rww-data-snapshot-$$"
+          mkdir -p "$SNAPSHOT"
+          if compgen -G "data/*.json" > /dev/null; then
+            cp -f data/*.json "$SNAPSHOT/"
+            echo "Snapshot van $(ls data/*.json | wc -l) JSON-files in $SNAPSHOT"
+          else
+            echo "Geen data/*.json gevonden (eerste run?), geen snapshot."
+          fi
+
           git fetch origin main
 
-          # Fast-forward only — falt als lokaal bewerkte tracked files botsen met
-          # inkomende wijzigingen. Dan moet iemand dat handmatig oplossen op de
-          # server (meestal data/*.json dat via het CMS is bewerkt).
           if ! git merge --ff-only origin/main; then
-            echo "::error::Fast-forward merge faalde. Waarschijnlijk is een lokaal bewerkt bestand ook in deze push gewijzigd. Los dit handmatig op via SSH."
+            echo "::error::Fast-forward merge faalde. Live state wordt hersteld."
             git status
+            # Restore voor de zekerheid (mocht git toch iets aangeraakt hebben)
+            if [ -d "$SNAPSHOT" ] && compgen -G "$SNAPSHOT/*.json" > /dev/null; then
+              cp -f "$SNAPSHOT"/*.json data/
+            fi
+            rm -rf "$SNAPSHOT"
             exit 1
           fi
+
+          # Restore CMS-state na de pull. Overschrijft alleen de geünifyde set
+          # JSON-files; nieuwe files die de pull eventueel toevoegt blijven staan.
+          if compgen -G "$SNAPSHOT/*.json" > /dev/null; then
+            cp -f "$SNAPSHOT"/*.json data/
+            echo "$(ls $SNAPSHOT/*.json | wc -l) JSON-files hersteld uit snapshot."
+          fi
+          rm -rf "$SNAPSHOT"
 
           echo "== Na pull =="
           git rev-parse --short HEAD
 
           echo "== PHP syntax check =="
-          # Lint alle PHP-bestanden die in deze push zijn aangeraakt (plus de
-          # centrale routers) zodat we nooit een parse error live zetten.
           CHANGED=$(git diff --name-only HEAD@{1} HEAD -- '*.php' || true)
           for f in $CHANGED index.php form-handler.php router.php; do
             [ -f "$f" ] || continue
@@ -70,6 +91,10 @@ jobs:
           echo "Alle PHP-bestanden syntactisch OK."
           REMOTE
 
-      - name: Smoke test (HTTP 200 op homepage)
+      - name: Smoke test (HTTP 200 + GTM aanwezig)
         run: |
-          curl -fsS -o /dev/null -w "HTTP %{http_code}\n" https://www.rwwbouw.nl/
+          BODY=$(curl -fsS https://www.rwwbouw.nl/)
+          echo "$BODY" | grep -q "googletagmanager.com/gtm.js" \
+            || { echo "::error::GTM script niet meer aanwezig in homepage HTML — CMS-state ging mogelijk verloren"; exit 1; }
+          GTM_ID=$(echo "$BODY" | grep -oE "GTM-[A-Z0-9]+" | head -1 || echo "(geen ID gevonden)")
+          echo "Homepage HTTP 200 — GTM ID: $GTM_ID"
