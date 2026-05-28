@@ -226,3 +226,224 @@ input:focus, textarea:focus, select:focus {
   background-color: #991B1B;
   transform: scale(1.35);
 }
+
+/* ── Focus slider: midden groter + helder, zijkanten kleiner + gedempt ── */
+
+/*
+ * Scale staat op het KIND (project-card), NIET op de slide zelf.
+ * Zo blijft de klikbare zone van elke slide intact —
+ * de slide-breedte in de DOM verandert niet, alleen het kaartje schaalt mee.
+ */
+[data-slider-focus].slider-container {
+  padding: 2rem 0; /* ademruimte voor de uitvergroot middelste kaart */
+}
+
+[data-slider-focus] .slider-slide {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.45s ease, filter 0.45s ease;
+}
+
+/* Elk kaartje krijgt een soepele scale-transitie */
+[data-slider-focus] .slider-slide > * {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* Midden: kaart 10% groter, volledig helder */
+[data-slider-focus] .slider-slide.sf-active {
+  z-index: 2;
+  opacity: 1;
+  filter: none;
+}
+[data-slider-focus] .slider-slide.sf-active > * {
+  transform: scale(1.1);
+}
+
+/* Direct naast het midden: kaart iets kleiner + gedempt */
+[data-slider-focus] .slider-slide.sf-adjacent {
+  opacity: 0.75;
+  filter: brightness(0.65);
+}
+[data-slider-focus] .slider-slide.sf-adjacent > * {
+  transform: scale(0.94);
+}
+
+/* Verder weg (peek): sterk gedempt */
+[data-slider-focus] .slider-slide.sf-far {
+  opacity: 0.45;
+  filter: brightness(0.45);
+}
+[data-slider-focus] .slider-slide.sf-far > * {
+  transform: scale(0.9);
+}
+
+/* ── USP Blob Icons (UBI) ─────────────────────────────────────── */
+
+.ubi-track {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.25rem 0;
+}
+
+.ubi-track::-webkit-scrollbar {
+  display: none;
+}
+
+.ubi-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  text-align: center;
+  padding: 0 1.25rem;
+  flex-shrink: 0;
+}
+
+.ubi-blob {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #FEF2F2, #FEE2E2);
+  border-radius: 80px 97px 110px 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .ubi-track {
+    overflow-x: visible;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .ubi-item {
+    min-width: 0;
+    max-width: 170px;
+  }
+}
+
+/* ── "Zo werkt het" stappen (ZWH) ─────────────────────────────── */
+
+.zwh-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  position: relative;
+}
+
+.zwh-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+  position: relative;
+}
+
+/* Gestippelde verbindingslijn tussen items (desktop only) */
+.zwh-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  width: 100%;
+  border-top: 2px dashed #D6D3D1;
+  z-index: 0;
+}
+
+.zwh-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #D6D3D1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.zwh-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #991B1B;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zwh-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #F5F5F4;
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #44403C;
+  margin-top: 8px;
+}
+
+.zwh-pill::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #991B1B;
+  flex-shrink: 0;
+}
+
+/* Responsive: tablet en mobiel → 1 kolom, cirkel links + tekst rechts */
+@media (max-width: 1023px) {
+  .zwh-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .zwh-item {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 0;
+  }
+
+  .zwh-item::after {
+    display: none;
+  }
+
+  .zwh-circle {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+  }
+
+  .zwh-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+    top: 4px;
+    right: 4px;
+  }
+
+  .zwh-item-text {
+    padding-top: 0.25rem;
+  }
+}

@@ -102,10 +102,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!track || slides.length === 0) return;
 
-    var GAP     = 16;
-    var current = 0;
-    var perView = 1;
-    var total   = slides.length;
+    var GAP      = 16;
+    var current  = 0;
+    var perView  = 1;
+    var total    = slides.length;
+    var isFocus  = container.hasAttribute('data-slider-focus');
 
     function getSlidesPerView() {
       var override = parseInt(container.dataset.sliderPerView, 10);
@@ -117,7 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function getSlideWidth() {
-      return (container.offsetWidth - GAP * (perView - 1)) / perView;
+      // Focus slider: slides iets smaller dan 1/perView zodat aan de rand
+      // de volgende foto als peek zichtbaar is
+      var ratio = (isFocus && perView > 1) ? 0.93 : 1;
+      return Math.round((container.offsetWidth * ratio - GAP * (perView - 1)) / perView);
     }
 
     function maxIndex() {
@@ -145,11 +149,25 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    // Focus klassen: midden helder + groot, zijkanten gedempt
+    function updateFocusClasses() {
+      if (!isFocus) return;
+      var centerIdx = current + Math.floor(perView / 2);
+      slides.forEach(function (slide, idx) {
+        slide.classList.remove('sf-active', 'sf-adjacent', 'sf-far');
+        var dist = Math.abs(idx - centerIdx);
+        if (dist === 0)      slide.classList.add('sf-active');
+        else if (dist === 1) slide.classList.add('sf-adjacent');
+        else                 slide.classList.add('sf-far');
+      });
+    }
+
     function moveTo(index) {
       current = Math.min(Math.max(index, 0), maxIndex());
       var offset = current * (getSlideWidth() + GAP);
       track.style.transform = 'translateX(-' + offset + 'px)';
       updateControls();
+      updateFocusClasses();
     }
 
     function layout() {
@@ -168,6 +186,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (nextBtn) {
       nextBtn.addEventListener('click', function () { moveTo(current + 1); });
     }
+
+    // Klik op een foto → navigeer richting die foto
+    slides.forEach(function (slide, idx) {
+      slide.style.cursor = 'pointer';
+      slide.addEventListener('click', function () {
+        var centerIdx = current + Math.floor(perView / 2);
+        if (idx < centerIdx) {
+          moveTo(current - 1); // klik links van midden → een stap terug
+        } else if (idx > centerIdx) {
+          moveTo(current + 1); // klik rechts van midden → een stap voor
+        }
+        // idx === centerIdx: al in het midden, niets doen
+      });
+    });
 
     var touchStartX = 0;
     track.addEventListener('touchstart', function (e) {
