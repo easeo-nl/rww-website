@@ -3,12 +3,40 @@ require_once __DIR__ . '/includes/content.php';
 require_once __DIR__ . '/includes/blog-engine.php';
 require_once __DIR__ . '/includes/form-engine.php';
 
-$pageTitle = page_content('interieur', 'seo_title', 'Interieurontwerp en 3D-visualisatie — RWW Bouw');
-$metaDescription = page_content('interieur', 'seo_description', 'Professioneel interieurontwerp en 3D-visualisatie in Amersfoort en omgeving. Agnieszka ontwerpt uw ruimte voordat we beginnen met bouwen.');
+$pageTitle = page_content('interieur', 'seo_title', 'Interieurontwerp Amersfoort — RWW Bouw | 3D visualisatie op maat');
+$metaDescription = page_content('interieur', 'seo_description', 'Professioneel interieurontwerp en 3D visualisatie in Amersfoort en omgeving. Agnieszka ontwerpt uw ruimte op maat. U ziet het resultaat voordat we beginnen. Bel ons direct.');
 $htmlLang = 'nl';
 
 require_once __DIR__ . '/includes/header.php';
 ?>
+
+
+  <!-- SECTION: breadcrumb -->
+  <?php
+  $breadcrumb_items = [
+    ['label' => 'Home',             'url' => '/'],
+    ['label' => 'Interieurontwerp', 'url' => '/interieur.php'],
+  ];
+  ?>
+  <nav aria-label="Breadcrumb" class="bg-rww-light border-b border-rww-stone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <ol class="flex items-center gap-2 text-sm text-rww-muted">
+        <?php foreach ($breadcrumb_items as $i => $item): ?>
+        <li class="flex items-center gap-2">
+          <?php if ($i > 0): ?>
+          <svg class="w-4 h-4 text-rww-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <?php endif; ?>
+          <?php if ($i < count($breadcrumb_items) - 1): ?>
+          <a href="<?= e($item['url']) ?>" class="hover:text-rww-red transition-colors"><?= e($item['label']) ?></a>
+          <?php else: ?>
+          <span class="text-rww-dark font-medium"><?= e($item['label']) ?></span>
+          <?php endif; ?>
+        </li>
+        <?php endforeach; ?>
+      </ol>
+    </div>
+  </nav>
+  <!-- /SECTION: breadcrumb -->
 
 
   <!-- SECTION: hero -->
@@ -21,14 +49,14 @@ require_once __DIR__ . '/includes/header.php';
       <div class="max-w-2xl">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Interieurontwerp & visualisatie</span>
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mt-4 mb-6">
-          <?= page_content('interieur', 'hero_titel', 'U ziet het resultaat —<br>voordat we beginnen') ?>
+          <?= page_content('interieur', 'hero_titel', 'Interieurontwerp in Amersfoort —<br>u ziet het eerst op papier') ?>
         </h1>
         <p class="text-stone-300 text-lg sm:text-xl mb-8 leading-relaxed">
-          <?= e(page_content('interieur', 'hero_subtitel', 'Agnieszka ontwerpt uw ruimte en maakt een realistische 3D-visualisatie. U weet precies hoe het eruit komt te zien voordat er één tegel ligt.')) ?>
+          <?= e(page_content('interieur', 'hero_subtitel', 'Agnieszka combineert haar oog voor design met technische kennis van wat uitvoerbaar is. Ze maakt 3D visualisaties zodat u het eindresultaat ziet voordat er ook maar één tegel ligt. Actief in Amersfoort en omgeving.')) ?>
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#contact" class="bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded text-lg font-semibold transition-colors text-center">
-            Offerte aanvragen
+            Gratis inmeting aanvragen
           </a>
           <a href="tel:<?= e(site('company.phone')) ?>" class="border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded text-lg font-medium transition-colors text-center">
             <svg class="w-5 h-5 inline mr-2 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
@@ -37,12 +65,59 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <div class="mt-8 flex items-center gap-3">
           <div class="stars text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <span class="text-stone-400 text-sm">5.0 op Google &middot; Aanbevolen op Werkspot</span>
+          <span class="text-stone-400 text-sm">5.0 op Google &middot; Meer dan 50 tevreden klanten</span>
+          <a href="#reviews" class="text-rww-red text-sm font-semibold hover:underline">Lees onze reviews →</a>
         </div>
       </div>
     </div>
   </section>
   <!-- /SECTION: hero -->
+
+
+  <!-- SECTION: usps -->
+  <?php
+  $usp_items = [
+    [
+      'icoon' => 'check',
+      'titel' => 'Gratis 3D visualisatie',
+      'tekst' => 'U ziet uw nieuwe ruimte op papier voordat we beginnen.',
+    ],
+    [
+      'icoon' => 'check',
+      'titel' => 'Ontwerp én uitvoering',
+      'tekst' => 'Hetzelfde team dat ontwerpt, bouwt ook. Geen miscommunicatie.',
+    ],
+    [
+      'icoon' => 'check',
+      'titel' => 'Tot 3 visualisaties',
+      'tekst' => 'We maken meerdere mogelijkheden zodat u kunt kiezen wat het beste bij u past.',
+    ],
+    [
+      'icoon' => 'check',
+      'titel' => 'Actief in Amersfoort en omgeving',
+      'tekst' => 'Snel ter plaatse, korte lijnen en persoonlijk contact.',
+    ],
+  ];
+  ?>
+  <section class="py-12 bg-rww-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <?php foreach ($usp_items as $usp): ?>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-rww-red/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white text-sm mb-1"><?= e($usp['titel']) ?></h3>
+            <p class="text-stone-400 text-sm leading-relaxed"><?= e($usp['tekst']) ?></p>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: usps -->
+
 
   <!-- SECTION: diensten -->
   <section id="diensten" class="py-20 md:py-28 bg-rww-light">
@@ -93,13 +168,14 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <!-- /SECTION: diensten -->
 
+
   <!-- SECTION: werkwijze -->
   <section id="werkwijze" class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Onze werkwijze</span>
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">
-          Zo werken wij
+          <?= page_content('interieur', 'werkwijze_titel', 'Zo werkt interieurontwerp in Amersfoort') ?>
         </h2>
       </div>
 
@@ -176,6 +252,56 @@ require_once __DIR__ . '/includes/header.php';
   </section>
   <!-- /SECTION: werkwijze -->
 
+
+  <!-- SECTION: voor-na -->
+  <?php
+  $voor_na_items = [
+    [
+      'label'    => 'Interieurontwerp badkamer — Amersfoort',
+      'voor_img' => '/images/uploads/voor-interieur-1.jpg',
+      'na_img'   => '/images/uploads/na-interieur-1.jpg',
+      'voor_alt' => 'Ruimte voor interieurontwerp Amersfoort',
+      'na_alt'   => 'Ruimte na interieurontwerp Amersfoort',
+    ],
+    [
+      'label'    => 'Keukenontwerp en visualisatie — Bunschoten-Spakenburg',
+      'voor_img' => '/images/uploads/voor-interieur-2.jpg',
+      'na_img'   => '/images/uploads/na-interieur-2.jpg',
+      'voor_alt' => 'Keuken voor ontwerp Bunschoten-Spakenburg',
+      'na_alt'   => 'Keuken na ontwerp Bunschoten-Spakenburg',
+    ],
+  ];
+  ?>
+  <section class="py-20 md:py-28 bg-rww-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Resultaten</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">Voor en na</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+        <?php foreach ($voor_na_items as $item): ?>
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+          <div class="grid grid-cols-2">
+            <div class="relative">
+              <img src="<?= e($item['voor_img']) ?>" alt="<?= e($item['voor_alt']) ?>" class="w-full h-48 object-cover" loading="lazy">
+              <span class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded">Voor</span>
+            </div>
+            <div class="relative">
+              <img src="<?= e($item['na_img']) ?>" alt="<?= e($item['na_alt']) ?>" class="w-full h-48 object-cover" loading="lazy">
+              <span class="absolute bottom-2 left-2 bg-rww-red text-white text-xs px-2 py-1 rounded">Na</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="text-rww-dark font-semibold text-sm"><?= e($item['label']) ?></p>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: voor-na -->
+
+
   <!-- SECTION: projecten -->
   <?php
   $interieur_fotos = array_filter(
@@ -190,7 +316,9 @@ require_once __DIR__ . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
         <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Ons werk</span>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-4 mb-6 font-bold">Onze ontwerpen</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-4 mb-6 font-bold">
+          <?= page_content('interieur', 'projecten_titel', 'Onze interieurprojecten in de regio Amersfoort') ?>
+        </h2>
       </div>
       <div class="fade-in">
         <div class="slider-container" data-slider>
@@ -231,16 +359,73 @@ require_once __DIR__ . '/includes/header.php';
   <?php endif; ?>
   <!-- /SECTION: projecten -->
 
+
+  <!-- SECTION: faq -->
+  <?php
+  $faq_items = [
+    [
+      'vraag'    => 'Wat doet Agnieszka precies als binnenhuisarchitect?',
+      'antwoord' => 'Agnieszka combineert haar oog voor design met technische kennis van wat uitvoerbaar is. Ze meet op, adviseert over indeling, materialen en kleuren, en maakt 3D visualisaties zodat u het resultaat ziet voordat er ook maar één tegel ligt.',
+    ],
+    [
+      'vraag'    => 'Hoeveel visualisaties maken jullie?',
+      'antwoord' => 'Voor een badkamer of keuken maken we soms wel drie verschillende visualisaties — drie mogelijkheden — zodat u kunt kiezen wat het beste bij u past.',
+    ],
+    [
+      'vraag'    => 'Wat kost een ontwerp en visualisatie?',
+      'antwoord' => 'Als wij ook de werkzaamheden uitvoeren, betaalt u niets voor het ontwerp en de visualisaties. De kosten zijn inbegrepen bij het project.',
+    ],
+    [
+      'vraag'    => 'Maken jullie ook ontwerpen voor projecten die jullie niet zelf uitvoeren?',
+      'antwoord' => 'In principe richten we ons op projecten die we ook zelf uitvoeren. Zo kunnen we garanderen dat het ontwerp en de uitvoering op elkaar aansluiten.',
+    ],
+    [
+      'vraag'    => 'Hoe lang duurt het ontwerp- en visualisatieproces?',
+      'antwoord' => 'Dat hangt af van de omvang en het aantal aanpassingsrondes. We nemen de tijd die nodig is om het goed te doen — u beslist pas als u tevreden bent met het ontwerp.',
+    ],
+    [
+      'vraag'    => 'Kan Agnieszka ook adviseren over materialen en kleuren?',
+      'antwoord' => 'Absoluut. Kleur- en materiaaladvies is een belangrijk onderdeel van haar werk. Ze adviseert op basis van uw smaak, de ruimte en wat technisch haalbaar is.',
+    ],
+  ];
+  ?>
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Veelgestelde vragen</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">Vragen over interieurontwerp</h2>
+      </div>
+      <div class="space-y-4 fade-in">
+        <?php foreach ($faq_items as $faq): ?>
+        <details class="group bg-rww-light rounded-lg">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-rww-dark">
+            <?= e($faq['vraag']) ?>
+            <svg class="w-5 h-5 text-rww-muted group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-rww-muted leading-relaxed">
+            <?= e($faq['antwoord']) ?>
+          </div>
+        </details>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: faq -->
+
+
   <!-- SECTION: reviews -->
-  <section>
+  <section id="reviews">
     <div>
-      <div class="text-center max-w-3.2xl mx-auto mb-16 fade-in">
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">Klanten aan het woord</h2>
+      <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-black mt-4 mb-6 font-bold">
+          <?= page_content('interieur', 'reviews_titel', 'Wat klanten zeggen over ons interieurontwerp') ?>
+        </h2>
         <script defer async src='https://cdn.trustindex.io/loader.js?08389c960054733e4b062cdded1'></script>
       </div>
     </div>
   </section>
   <!-- /SECTION: reviews -->
+
 
   <!-- SECTION: contact -->
   <section id="contact" class="py-20 md:py-28 bg-rww-dark">
@@ -249,16 +434,16 @@ require_once __DIR__ . '/includes/header.php';
         <div class="fade-in">
           <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Contact</span>
           <h2 class="font-display text-3xl sm:text-4xl text-white mt-4 mb-6 font-bold">
-            Vrijblijvend kennismaken met Agnieszka
+            Plan een gratis gesprek over uw interieurontwerp in Amersfoort
           </h2>
           <p class="text-stone-400 text-lg leading-relaxed mb-8">Vertel ons over uw ruimte en wensen. We plannen een kennismaking en kijken samen wat mogelijk is.</p>
 
           <div class="space-y-6">
-            <a href="tel:+31616035754" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
+            <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
               <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
                 <svg class="w-5 h-5 text-rww-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
-              <div><p class="font-semibold text-lg">WhatsApp</p><p class="text-stone-400">+31 6 160 357 54</p></div>
+              <div><p class="font-semibold text-lg">Whatsapp</p><p class="text-stone-400">+31 6 160 357 54</p></div>
             </a>
             <a href="tel:<?= e(site('company.phone')) ?>" class="flex items-center gap-4 text-white hover:text-rww-red transition-colors group">
               <div class="w-12 h-12 bg-rww-red/20 group-hover:bg-rww-red/30 rounded-full flex items-center justify-center transition-colors">
