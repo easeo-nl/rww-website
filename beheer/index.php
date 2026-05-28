@@ -65,7 +65,7 @@ if (isset($_GET['format']) && $_GET['format'] === 'json') {
 
 // Route to pages
 $allowedTabs = [
-    'dashboard', 'content', 'paginas', 'blog', 'blog-edit', 'media',
+    'dashboard', 'content', 'paginas', 'blog', 'blog-edit', 'media', 'fotos',
     'formulieren', 'formulier-edit', 'inbox',
     'navigatie', 'huisstijl', 'redirects', 'juridisch', 'tracking',
     'gebruikers', 'activiteit', 'backup',
