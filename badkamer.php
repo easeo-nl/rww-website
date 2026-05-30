@@ -223,7 +223,7 @@ require_once __DIR__ . '/includes/header.php';
       </div>
 
       <div class="text-center mt-14 fade-in">
-        <a href="#contact" class="inline-flex items-center gap-2 bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded-full text-base font-semibold transition-colors">
+        <a href="offerte.php" class="inline-flex items-center gap-2 bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded-full text-base font-semibold transition-colors">
           Offerte aanvragen
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -267,10 +267,10 @@ require_once __DIR__ . '/includes/header.php';
         </div>
       </div>
       <div class="text-center mt-12 fade-in">
-        <a href="" class="inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white px-8 py-4 rounded-full text-base font-medium transition-colors">
+        <!-- <a href="" class="inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white px-8 py-4 rounded-full text-base font-medium transition-colors">
           Bekijk alle projecten
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
+        </a> -->
       </div>
     </div>
   </section>
@@ -388,7 +388,7 @@ require_once __DIR__ . '/includes/header.php';
           <p class="text-stone-400 text-lg leading-relaxed mb-8">
             <?= e(page_content('badkamer', 'diensten_tekst', 'Van sloopwerk en leidingwerk tot tegels en de laatste afwerking — u heeft één aanspreekpunt, één offerte, geen losse onderaannemers die het op elkaar afschuiven.')) ?>
           </p>
-          <a href="#contact" class="inline-flex items-center gap-2 bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded-full text-base font-semibold transition-colors">
+          <a href="offerte.php" class="inline-flex items-center gap-2 bg-rww-red hover:bg-rww-red-light text-white px-8 py-4 rounded-full text-base font-semibold transition-colors">
             Offerte aanvragen
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
