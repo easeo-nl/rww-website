@@ -42,7 +42,7 @@ require_once __DIR__ . '/includes/header.php';
           </h1>
 
           <p class="text-stone-300 text-lg leading-relaxed mb-10 max-w-lg">
-            <?= e(page_content('badkamer', 'hero_subtitel', 'Agnieszka tekent uw badkamer op maat. Rafael en zijn team bouwen hem precies zoals gepland. Tegelwerk, sanitair, beton ciré — alles door één team.')) ?>
+            <?= e(page_content('badkamer', 'hero_subtitel', 'Onze architect tekent uw badkamer op maat. Rafael en zijn team bouwen hem precies zoals gepland. Tegelwerk, sanitair, beton ciré — alles door één team.')) ?>
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3 mb-10">
@@ -410,12 +410,12 @@ require_once __DIR__ . '/includes/header.php';
               'icon'  => '<svg viewBox="0 0 40 40" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M6 28h28M6 28v4h28v-4"/><rect x="10" y="16" width="20" height="12" rx="2"/><path d="M20 16v-6M17 10h6"/><circle cx="20" cy="8" r="2"/></svg>',
             ],
             [
-              'titel' => 'Beton ciré & microbeton',
-              'tekst' => 'Betonlook-afwerking op wanden en vloer — naadloos, waterdicht, tijdloos. Agnieszka adviseert over kleur en textuur.',
+              'titel' => 'Beton ciré en microbeton',
+              'tekst' => 'Betonlook-afwerking op wanden en vloer — naadloos, waterdicht, tijdloos. Onze architect adviseert over kleur en textuur.',
               'icon'  => '<svg viewBox="0 0 40 40" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="5" y="5" width="30" height="30" rx="2"/><path d="M5 15h30M5 25h30M15 5v30M25 5v30"/></svg>',
             ],
             [
-              'titel' => 'Sloopwerk & leidingwerk',
+              'titel' => 'Sloopwerk en leidingwerk',
               'tekst' => 'We slopen de oude badkamer volledig en leggen nieuwe elektra en leidingen. Schone lei, goed gedaan.',
               'icon'  => '<svg viewBox="0 0 40 40" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M8 32L28 12M22 6l8 8-4 4-8-8zM8 32l4-4-4-4-4 4z"/><path d="M30 10l2-2a2 2 0 00-3-3l-2 2"/></svg>',
             ],
@@ -437,6 +437,59 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </section>
   <!-- /SECTION: diensten -->
+
+
+  <!-- SECTION: faq -->
+  <?php
+  $faq_items = [
+    [
+      'vraag'    => 'Hoe lang duurt een badkamerrenovatie?',
+      'antwoord' => 'Gemiddeld 2 tot 3 weken, afhankelijk van de grootte en complexiteit. We maken vooraf altijd een duidelijke planning met een start- en einddatum, zodat u weet wanneer uw badkamer weer klaar is.',
+    ],
+    [
+      'vraag'    => 'Wat kost een complete badkamerrenovatie?',
+      'antwoord' => 'Dat hangt af van de grootte, de materialen en het sanitair. We maken altijd eerst een gratis 3D-ontwerp en een vaste offerte. Zo weet u precies wat het kost voordat er ook maar iets gesloopt wordt — geen verrassingen achteraf.',
+    ],
+    [
+      'vraag'    => 'Regelen jullie ook het sanitair en de tegels?',
+      'antwoord' => 'Het sanitair regelt u zelf — wij plaatsen en sluiten alles aan. De tegels regelt u ook zelf; wij leggen ze. Heeft u hulp nodig bij de keuze? Onze architect denkt graag mee over kleur, formaat en patroon.',
+    ],
+    [
+      'vraag'    => 'Wie tekent mijn nieuwe badkamer?',
+      'antwoord' => 'Onze architect. Ze meet uw badkamer op, adviseert over indeling en materialen en maakt een 3D-visualisatie. U ziet het resultaat tot op de centimeter voordat Rafael en zijn team beginnen.',
+    ],
+    [
+      'vraag'    => 'Regelen jullie ook het leidingwerk en de elektra?',
+      'antwoord' => 'Ja, volledig. We werken met vaste loodgieters en elektriciens waarmee we al jaren samenwerken. U hoeft niets te coördineren — wij regelen alles van sloopwerk tot oplevering.',
+    ],
+    [
+      'vraag'    => 'Hoeveel garantie krijg ik op de badkamerrenovatie?',
+      'antwoord' => '5 jaar garantie op alle werkzaamheden — tegelwerk, loodgieterswerk, stucwerk en afwerking. Mocht er iets niet goed zitten, dan lossen we het op.',
+    ],
+  ];
+  ?>
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <span class="text-rww-red font-semibold text-sm uppercase tracking-widest">Veelgestelde vragen</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-rww-dark mt-4 mb-6 font-bold">Vragen over badkamerrenovatie</h2>
+      </div>
+      <div class="space-y-4 fade-in">
+        <?php foreach ($faq_items as $faq): ?>
+        <details class="group bg-rww-light rounded-lg">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-rww-dark">
+            <?= e($faq['vraag']) ?>
+            <svg class="w-5 h-5 text-rww-muted group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-rww-muted leading-relaxed">
+            <?= e($faq['antwoord']) ?>
+          </div>
+        </details>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: faq -->
 
 
   <!-- SECTION: reviews -->

@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/header.php';
   <!-- SECTION: hero -->
   <section id="hero" class="relative min-h-screen flex items-center">
     <div class="absolute inset-0">
-      <img src="<?= e(page_content('home', 'hero_image', '/images/uploads/20230329_151355.jpg')) ?>" alt="Badkamerrenovatie door RWW Bouw" class="w-full h-full object-cover">
+      <img src="<?= e(page_content('home', 'hero_image', '/images/uploads/Hero.png')) ?>" alt="Bouwplaats met mooie zonsondergang" class="w-full h-full object-cover">
       <div class="hero-overlay absolute inset-0"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
