@@ -5,18 +5,26 @@
  */
 require_once __DIR__ . '/includes/content.php';
 
-// Redirect if already set up
-if (is_setup_complete()) {
+require_once __DIR__ . '/includes/form-engine.php';
+
+if (session_status() === PHP_SESSION_NONE) session_start();
+
+$step = max(1, min(5, (int)($_GET['step'] ?? $_POST['step'] ?? 1)));
+
+// Redirect if already set up (flag or any admin); only the installer's own session may see the step-5 confirmation (GET only)
+$hasAdmin = in_array('admin', array_column(load_json('users.json')['users'] ?? [], 'rol'), true);
+$showConfirmation = $step === 5 && $_SERVER['REQUEST_METHOD'] === 'GET' && !empty($_SESSION['setup_finished']);
+if ((is_setup_complete() || $hasAdmin) && !$showConfirmation) {
     header('Location: /');
     exit;
 }
-
-session_start();
-
-$step = max(1, min(5, (int)($_GET['step'] ?? $_POST['step'] ?? 1)));
 $errors = [];
 
 // Process form submissions
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !verify_csrf_frontend()) {
+    http_response_code(403);
+    exit;
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
@@ -127,6 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             require_once __DIR__ . '/includes/audit.php';
             audit_log('setup_voltooid', "Admin: {$naam} ({$email})", $naam);
 
+            $_SESSION['setup_finished'] = true;
             header('Location: /setup.php?step=5');
             exit;
         }
@@ -181,6 +190,7 @@ $siteData = load_json('site.json');
         <p class="text-gray-500 mb-6">Vul de gegevens van uw bedrijf in om te beginnen.</p>
 
         <form method="POST">
+            <input type="hidden" name="csrf_token" value="<?= csrf_token_frontend() ?>">
             <input type="hidden" name="action" value="step1">
             <input type="hidden" name="step" value="1">
 
@@ -234,6 +244,7 @@ $siteData = load_json('site.json');
         <p class="text-gray-500 mb-6">Kies de kleuren en lettertypen voor uw website.</p>
 
         <form method="POST">
+            <input type="hidden" name="csrf_token" value="<?= csrf_token_frontend() ?>">
             <input type="hidden" name="action" value="step2">
             <input type="hidden" name="step" value="2">
 
@@ -299,6 +310,7 @@ $siteData = load_json('site.json');
 
         <?php $contentData = load_json('content.json'); ?>
         <form method="POST">
+            <input type="hidden" name="csrf_token" value="<?= csrf_token_frontend() ?>">
             <input type="hidden" name="action" value="step3">
             <input type="hidden" name="step" value="3">
 
@@ -329,6 +341,7 @@ $siteData = load_json('site.json');
         <p class="text-gray-500 mb-6">Maak uw beheeraccount aan.</p>
 
         <form method="POST">
+            <input type="hidden" name="csrf_token" value="<?= csrf_token_frontend() ?>">
             <input type="hidden" name="action" value="step4">
             <input type="hidden" name="step" value="4">
 
