@@ -8,7 +8,9 @@ require_once __DIR__ . '/content.php';
 define('MEDIA_UPLOAD_DIR', EASEO_ROOT . '/images/uploads');
 define('MEDIA_THUMB_DIR', EASEO_ROOT . '/images/thumbs');
 define('MEDIA_MAX_SIZE', 10 * 1024 * 1024); // 10MB
-define('MEDIA_ALLOWED_TYPES', ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'application/pdf']);
+// Geen SVG: die kan script bevatten en draait dan op hetzelfde domein als /beheer.
+define('MEDIA_ALLOWED_TYPES', ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf']);
+define('MEDIA_ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf']);
 define('MEDIA_THUMB_WIDTH', 300);
 define('MEDIA_THUMB_HEIGHT', 300);
 define('MEDIA_MAX_WIDTH', 1920);
@@ -41,6 +43,10 @@ function upload_media(array $file): array {
     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
     $ext = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $ext));
     if (!$ext) $ext = 'jpg';
+    // De extensie komt uit de bestandsnaam: zonder allowlist wordt een GIF met PHP erin als x.php uitgevoerd.
+    if (!in_array($ext, MEDIA_ALLOWED_EXTENSIONS, true)) {
+        return ['success' => false, 'error' => 'Bestandsextensie niet toegestaan: .' . $ext];
+    }
     $safeName = preg_replace('/[^a-z0-9-]/', '', strtolower(pathinfo($file['name'], PATHINFO_FILENAME)));
     $filename = $safeName . '-' . substr(md5(uniqid()), 0, 8) . '.' . $ext;
 

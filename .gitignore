@@ -29,3 +29,6 @@ Thumbs.db
 # PHP
 vendor/
 composer.lock
+
+# Gebruikers + wachtwoord-hashes: nooit in de (publieke) repo
+data/users.json
